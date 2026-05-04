@@ -43,244 +43,71 @@
             100% { transform: scale(1.06) translate(20px, 10px); }
         }
 
-        header {
-            background: #000;
-            border-bottom: 3px solid var(--glam-red);
-            padding: 16px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-        }
-
-        .logo {
-            font-family: 'Stalinist One', cursive;
-            color: var(--soft-red);
-            font-size: 2rem;
-            text-shadow: 0 0 15px var(--glam-red);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .home-screen {
-            padding: 40px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .anime-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #2a2a2a;
-            transition: 0.4s;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-        }
-
-        .anime-card:hover {
-            border-color: var(--soft-red);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(142, 14, 42, 0.6);
-        }
-
-        .anime-card img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            object-position: top;
-            filter: grayscale(20%);
-            transition: 0.4s;
-        }
-
+        header { background: #000; border-bottom: 3px solid var(--glam-red); padding: 16px 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.7); }
+        .logo { font-family: 'Stalinist One', cursive; color: var(--soft-red); font-size: 2rem; text-shadow: 0 0 15px var(--glam-red); cursor: pointer; transition: 0.3s; }
+        .home-screen { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .anime-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #2a2a2a; transition: 0.4s; cursor: pointer; backdrop-filter: blur(10px); }
+        .anime-card:hover { border-color: var(--soft-red); transform: translateY(-10px) scale(1.02); box-shadow: 0 10px 30px rgba(142, 14, 42, 0.6); }
+        .anime-card img { width: 100%; height: 420px; object-fit: cover; object-position: top; filter: grayscale(20%); transition: 0.4s; }
         .anime-card:hover img { filter: grayscale(0%); }
-
-        .card-info {
-            padding: 20px;
-            background: linear-gradient(to top, #0a0a0a, transparent);
-        }
-
-        .card-info h3 {
-            margin: 0;
-            color: var(--soft-red);
-            font-size: 1.3rem;
-            font-family: 'Stalinist One', cursive;
-        }
-
-        .player-screen {
-            display: none;
-            padding: 20px 5%;
-        }
-
-        .back-btn {
-            background: var(--glam-red);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 25px;
-            font-weight: bold;
-            font-family: 'Montserrat', sans-serif;
-            transition: 0.3s;
-        }
+        .card-info { padding: 20px; background: linear-gradient(to top, #0a0a0a, transparent); }
+        .card-info h3 { margin: 0; color: var(--soft-red); font-size: 1.3rem; font-family: 'Stalinist One', cursive; }
+        .player-screen { display: none; padding: 20px 5%; }
+        .back-btn { background: var(--glam-red); color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; margin-bottom: 25px; font-weight: bold; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
         .back-btn:hover { background: var(--soft-red); transform: translateX(-5px); }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 25px;
-        }
-
-        .video-container {
-            background: #000;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 3px solid var(--glam-red);
-            box-shadow: 0 0 20px rgba(142, 14, 42, 0.5);
-        }
-
-        .video-wrap {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-        }
-
-        .video-wrap iframe {
-            position: absolute;
-            top:0; left:0; width:100%; height:100%;
-        }
-
-        .ep-list {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid var(--glam-red);
-            backdrop-filter: blur(10px);
-        }
-
-        .season-selector {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-bottom: 15px;
-            max-height: 120px;
-            overflow-y: auto;
-            padding-right: 3px;
-        }
+        .main-grid { display: grid; grid-template-columns: 1fr 350px; gap: 25px; }
+        .video-container { background: #000; border-radius: 10px; overflow: hidden; border: 3px solid var(--glam-red); box-shadow: 0 0 20px rgba(142, 14, 42, 0.5); }
+        .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; }
+        .video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
+        .ep-list { background: var(--card-bg); border-radius: 10px; padding: 20px; border: 1px solid var(--glam-red); backdrop-filter: blur(10px); }
+        .season-selector { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 15px; max-height: 120px; overflow-y: auto; padding-right: 3px; }
         .season-selector::-webkit-scrollbar { width: 4px; }
         .season-selector::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 4px; }
-
-        .szn-btn {
-            background: #222;
-            border: 1px solid #444;
-            color: white;
-            padding: 8px 14px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            font-family: 'Stalinist One', cursive;
-            border-radius: 4px;
-            white-space: nowrap;
-            transition: 0.2s;
-        }
-
+        .szn-btn { background: #222; border: 1px solid #444; color: white; padding: 8px 14px; cursor: pointer; font-size: 0.75rem; font-family: 'Stalinist One', cursive; border-radius: 4px; white-space: nowrap; transition: 0.2s; }
         .szn-btn.active { background: var(--glam-red); border-color: var(--soft-red); }
-
-        .episodes-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            max-height: 450px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-
+        .episodes-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-height: 450px; overflow-y: auto; padding-right: 5px; }
         .episodes-grid::-webkit-scrollbar { width: 5px; }
         .episodes-grid::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 5px; }
+        .ep-item { background: #2a2a2a; padding: 12px; text-align: center; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; }
+        .ep-item:hover, .ep-item.active { background: var(--soft-red); transform: scale(1.1); }
 
-        .ep-item {
-            background: #2a2a2a;
-            padding: 12px;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
+        @media (max-width: 1000px) { .main-grid { grid-template-columns: 1fr; } .logo { font-size: 1.5rem; } }
 
-        .ep-item:hover, .ep-item.active {
-            background: var(--soft-red);
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 1000px) {
-            .main-grid { grid-template-columns: 1fr; }
-            .logo { font-size: 1.5rem; }
-        }
-
-        /* ── МОБІЛЬНА ВЕРСІЯ ── */
         @media (max-width: 600px) {
-            header {
-                padding: 10px 4%;
-                gap: 8px;
-                flex-wrap: nowrap;
-            }
+            header { padding: 10px 4%; gap: 8px; flex-wrap: nowrap; }
             .logo { font-size: 1rem; white-space: nowrap; }
-            .top100-btn {
-                font-size: 0.58rem;
-                padding: 5px 8px;
-                margin-left: 0;
-                white-space: nowrap;
-            }
+            .top100-btn { font-size: 0.58rem; padding: 5px 8px; margin-left: 0; white-space: nowrap; }
             .search-wrap { flex: 1; min-width: 0; }
             .search-box { max-width: 100%; width: 100%; }
             .search-box input { font-size: 0.8rem; padding: 8px 10px; min-width: 0; }
             .search-box button { padding: 8px 10px; font-size: 0.9rem; flex-shrink: 0; }
-
-            /* Картки — 2 колонки на мобільному */
-            .home-screen {
-                padding: 16px 3%;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
+            .home-screen { padding: 16px 3%; grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .anime-card img { height: 200px; }
             .card-info { padding: 10px 10px 12px; }
             .card-info h3 { font-size: 0.72rem; }
             .card-info p { font-size: 0.68rem; margin: 4px 0 0; color: #888; }
-
-            /* Плеєр */
             .player-screen { padding: 12px 3%; }
             .back-btn { padding: 9px 16px; font-size: 0.8rem; margin-bottom: 14px; }
             .main-grid { gap: 14px; }
-
             #animeTitle { font-size: 1rem !important; margin-top: 10px !important; }
-
             .info-panel { gap: 10px; }
             .mal-rating { padding: 10px 14px; gap: 8px; }
             .mal-score { font-size: 1.3rem; }
             .mal-label { font-size: 0.62rem; }
             .mal-members { font-size: 0.7rem; }
-            .mal-rank-badge { font-size: 0.68rem; }
-            .mal-rank-badge span { font-size: 0.9rem; }
             .mal-link { font-size: 0.7rem; padding: 4px 8px; }
-
             .desc-box { padding: 12px; }
             .desc-title { font-size: 0.75rem; }
             .desc-text { font-size: 0.82rem; max-height: 100px; }
-
             .tracker-box { padding: 10px 12px; flex-wrap: wrap; }
             .tracker-title { font-size: 0.72rem; }
             .tracker-current { font-size: 0.82rem; }
-
             .fandom-box { padding: 12px; }
             .fandom-title { font-size: 0.75rem; margin-bottom: 10px; }
             .fandom-link-inner { padding: 12px 14px; gap: 10px; }
             .fandom-icon { font-size: 1.4rem; }
             .fandom-link-name { font-size: 0.85rem; }
             .fandom-link-sub { font-size: 0.7rem; }
-
             .ep-list { padding: 12px; }
             .season-selector { max-height: 90px; }
             .szn-btn { font-size: 0.65rem; padding: 6px 10px; }
@@ -295,343 +122,79 @@
             .card-info h3 { font-size: 0.65rem; }
         }
 
-        /* ── ТОП-100 КНОПКА ── */
-        .top100-btn {
-            background: transparent;
-            border: 2px solid var(--glam-red);
-            color: var(--soft-red);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-family: 'Stalinist One', cursive;
-            font-size: 0.75rem;
-            margin-left: 16px;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
+        .top100-btn { background: transparent; border: 2px solid var(--glam-red); color: var(--soft-red); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-family: 'Stalinist One', cursive; font-size: 0.75rem; margin-left: 16px; transition: 0.3s; white-space: nowrap; }
         .top100-btn:hover { background: var(--glam-red); color: #fff; }
 
-        /* ── МОДАЛКА TOP-100 ── */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.85);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(6px);
-        }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(6px); }
         .modal-overlay.open { display: flex; }
-        .modal-box {
-            background: #0d0d0d;
-            border: 2px solid var(--glam-red);
-            border-radius: 14px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 0 40px rgba(142,14,42,0.5);
-        }
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 24px;
-            border-bottom: 1px solid #2a2a2a;
-        }
-        .modal-header h2 {
-            margin: 0;
-            color: var(--soft-red);
-            font-family: 'Stalinist One', cursive;
-            font-size: 1rem;
-        }
-        .modal-close {
-            background: none;
-            border: none;
-            color: #888;
-            font-size: 1.5rem;
-            cursor: pointer;
-            line-height: 1;
-        }
+        .modal-box { background: #0d0d0d; border: 2px solid var(--glam-red); border-radius: 14px; width: 90%; max-width: 700px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 0 40px rgba(142,14,42,0.5); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid #2a2a2a; }
+        .modal-header h2 { margin: 0; color: var(--soft-red); font-family: 'Stalinist One', cursive; font-size: 1rem; }
+        .modal-close { background: none; border: none; color: #888; font-size: 1.5rem; cursor: pointer; line-height: 1; }
         .modal-close:hover { color: #fff; }
         .modal-body { overflow-y: auto; padding: 12px 0; flex: 1; }
         .modal-body::-webkit-scrollbar { width: 5px; }
         .modal-body::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 5px; }
-        .top-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 24px;
-            gap: 14px;
-            border-bottom: 1px solid #1a1a1a;
-            transition: 0.2s;
-        }
+        .top-item { display: flex; align-items: center; padding: 10px 24px; gap: 14px; border-bottom: 1px solid #1a1a1a; transition: 0.2s; }
         .top-item:hover { background: rgba(142,14,42,0.15); }
-        .top-rank {
-            font-family: 'Stalinist One', cursive;
-            font-size: 1.1rem;
-            color: var(--soft-red);
-            min-width: 36px;
-            text-align: center;
-        }
+        .top-rank { font-family: 'Stalinist One', cursive; font-size: 1.1rem; color: var(--soft-red); min-width: 36px; text-align: center; }
         .top-rank.gold { color: #ffd700; }
         .top-rank.silver { color: #c0c0c0; }
         .top-rank.bronze { color: #cd7f32; }
-        .top-img {
-            width: 44px;
-            height: 62px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid #333;
-        }
+        .top-img { width: 44px; height: 62px; object-fit: cover; border-radius: 4px; border: 1px solid #333; }
         .top-info { flex: 1; }
         .top-title { font-weight: bold; font-size: 0.9rem; color: #e0e0e0; margin-bottom: 4px; }
-        .top-score {
-            font-size: 0.8rem;
-            color: #ffd700;
-        }
+        .top-score { font-size: 0.8rem; color: #ffd700; }
         .top-loading { text-align: center; padding: 40px; color: #555; }
 
-        /* ── ПОШУК ── */
-        .search-wrap {
-            display: flex;
-            justify-content: flex-end;
-        }
-        .search-box {
-            display: flex;
-            width: 100%;
-            max-width: 420px;
-            border: 2px solid var(--glam-red);
-            border-radius: 30px;
-            overflow: hidden;
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 0 14px rgba(142,14,42,0.4);
-        }
-        .search-box input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #fff;
-            padding: 10px 18px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-        }
+        .search-wrap { display: flex; justify-content: flex-end; }
+        .search-box { display: flex; width: 100%; max-width: 420px; border: 2px solid var(--glam-red); border-radius: 30px; overflow: hidden; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); box-shadow: 0 0 14px rgba(142,14,42,0.4); }
+        .search-box input { flex: 1; background: transparent; border: none; outline: none; color: #fff; padding: 10px 18px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; }
         .search-box input::placeholder { color: #666; }
-        .search-box button {
-            background: var(--glam-red);
-            border: none;
-            color: #fff;
-            padding: 10px 18px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: 0.2s;
-        }
+        .search-box button { background: var(--glam-red); border: none; color: #fff; padding: 10px 18px; cursor: pointer; font-size: 1.1rem; transition: 0.2s; }
         .search-box button:hover { background: var(--soft-red); }
-        #searchResults {
-            padding: 20px 5% 0;
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .search-none {
-            color: #888;
-            text-align: center;
-            padding: 40px;
-            font-size: 1.1rem;
-            grid-column: 1/-1;
-        }
+        #searchResults { padding: 20px 5% 0; display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .search-none { color: #888; text-align: center; padding: 40px; font-size: 1.1rem; grid-column: 1/-1; }
 
-        /* ── ІНФО-ПАНЕЛЬ ── */
-        .info-panel {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        /* Рейтинг MAL */
-        .mal-rating {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 12px 18px;
-            backdrop-filter: blur(10px);
-        }
-        .mal-score {
-            font-family: 'Stalinist One', cursive;
-            font-size: 1.8rem;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255,215,0,0.4);
-        }
+        .info-panel { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
+        .mal-rating { display: flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px 18px; backdrop-filter: blur(10px); }
+        .mal-score { font-family: 'Stalinist One', cursive; font-size: 1.8rem; color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.4); }
         .mal-info { display: flex; flex-direction: column; gap: 2px; }
         .mal-label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
         .mal-members { font-size: 0.8rem; color: #888; }
-        .mal-link {
-            margin-left: auto;
-            color: var(--soft-red);
-            text-decoration: none;
-            font-size: 0.78rem;
-            border: 1px solid var(--glam-red);
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: 0.2s;
-        }
+        .mal-link { margin-left: auto; color: var(--soft-red); text-decoration: none; font-size: 0.78rem; border: 1px solid var(--glam-red); padding: 5px 10px; border-radius: 5px; transition: 0.2s; }
         .mal-link:hover { background: var(--glam-red); color: #fff; }
 
-        /* Опис */
-        .desc-box {
-            background: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 18px;
-            backdrop-filter: blur(10px);
-        }
-        .desc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .desc-title {
-            font-family: 'Stalinist One', cursive;
-            font-size: 0.85rem;
-            color: var(--soft-red);
-        }
-        /* Прогрес серії */
+        .desc-box { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 18px; backdrop-filter: blur(10px); }
+        .desc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .desc-title { font-family: 'Stalinist One', cursive; font-size: 0.85rem; color: var(--soft-red); }
         .ep-item { position: relative; overflow: hidden; }
-        .ep-item.watched::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: #2ecc71;
-            border-radius: 0 0 5px 5px;
-        }
+        .ep-item.watched::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #2ecc71; border-radius: 0 0 5px 5px; }
         .szn-btn { position: relative; }
-        .szn-btn.has-progress::before {
-            content: '';
-            position: absolute;
-            top: -6px; left: 50%; transform: translateX(-50%);
-            width: 8px; height: 8px;
-            background: #2ecc71;
-            border-radius: 50%;
-            box-shadow: 0 0 6px #2ecc71;
-        }
-        .desc-text {
-            color: #bbb;
-            font-size: 0.88rem;
-            line-height: 1.7;
-            max-height: 120px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
+        .szn-btn.has-progress::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; box-shadow: 0 0 6px #2ecc71; }
+        .desc-text { color: #bbb; font-size: 0.88rem; line-height: 1.7; max-height: 120px; overflow-y: auto; padding-right: 5px; }
         .desc-text::-webkit-scrollbar { width: 4px; }
         .desc-text::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 4px; }
-
-        .mal-rank-badge {
-            font-size: 0.78rem;
-            color: #aaa;
-            text-align: center;
-            line-height: 1.3;
-            margin: 0 4px;
-        }
+        .mal-rank-badge { font-size: 0.78rem; color: #aaa; text-align: center; line-height: 1.3; margin: 0 4px; }
         .mal-rank-badge span { display: block; font-family: 'Stalinist One', cursive; font-size: 1.1rem; color: #e0e0e0; }
 
-        /* Трекер серій (авто) */
-        .tracker-box {
-            background: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 14px 18px;
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .tracker-title {
-            font-family: 'Stalinist One', cursive;
-            font-size: 0.8rem;
-            color: var(--soft-red);
-            white-space: nowrap;
-        }
-        .tracker-current {
-            font-size: 0.9rem;
-            color: #ccc;
-            flex: 1;
-        }
+        .tracker-box { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 14px 18px; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 12px; }
+        .tracker-title { font-family: 'Stalinist One', cursive; font-size: 0.8rem; color: var(--soft-red); white-space: nowrap; }
+        .tracker-current { font-size: 0.9rem; color: #ccc; flex: 1; }
         .tracker-current span { color: #ffd700; font-weight: bold; }
 
-        /* Fandom Wiki */
-        .fandom-box {
-            background: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 18px;
-            backdrop-filter: blur(10px);
-        }
-        .fandom-title {
-            font-family: 'Stalinist One', cursive;
-            font-size: 0.85rem;
-            color: var(--soft-red);
-            margin-bottom: 14px;
-        }
-        .fandom-link {
-            text-decoration: none;
-            display: block;
-        }
-        .fandom-link-inner {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: linear-gradient(135deg, #0d0d0d, #1a0a1a);
-            border: 1px solid var(--glam-red);
-            border-radius: 10px;
-            padding: 16px 18px;
-            transition: 0.3s;
-        }
-        .fandom-link:hover .fandom-link-inner {
-            background: linear-gradient(135deg, #1a001a, #2a002a);
-            border-color: var(--soft-red);
-            box-shadow: 0 0 16px rgba(194,24,91,0.3);
-        }
+        .fandom-box { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 18px; backdrop-filter: blur(10px); }
+        .fandom-title { font-family: 'Stalinist One', cursive; font-size: 0.85rem; color: var(--soft-red); margin-bottom: 14px; }
+        .fandom-link { text-decoration: none; display: block; }
+        .fandom-link-inner { display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #0d0d0d, #1a0a1a); border: 1px solid var(--glam-red); border-radius: 10px; padding: 16px 18px; transition: 0.3s; }
+        .fandom-link:hover .fandom-link-inner { background: linear-gradient(135deg, #1a001a, #2a002a); border-color: var(--soft-red); box-shadow: 0 0 16px rgba(194,24,91,0.3); }
         .fandom-icon { font-size: 1.8rem; }
-        .fandom-link-name {
-            font-weight: bold;
-            color: #e0e0e0;
-            font-size: 0.95rem;
-            margin-bottom: 3px;
-        }
+        .fandom-link-name { font-weight: bold; color: #e0e0e0; font-size: 0.95rem; margin-bottom: 3px; }
         .fandom-link-sub { font-size: 0.78rem; color: #666; }
         .fandom-arrow { margin-left: auto; color: var(--soft-red); font-size: 1.3rem; }
 
-        /* Фільм-кнопка */
-        .film-btn-wrap {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #2a2a2a;
-        }
-        .film-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #1a0a00, #3a1500);
-            border: 1px solid var(--glam-red);
-            color: #ffcc88;
-            padding: 12px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'Stalinist One', cursive;
-            font-size: 0.8rem;
-            text-align: left;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .film-btn-wrap { margin-top: 10px; padding-top: 10px; border-top: 1px solid #2a2a2a; }
+        .film-btn { width: 100%; background: linear-gradient(135deg, #1a0a00, #3a1500); border: 1px solid var(--glam-red); color: #ffcc88; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-family: 'Stalinist One', cursive; font-size: 0.8rem; text-align: left; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
         .film-btn:hover { background: linear-gradient(135deg, #3a1500, #5a2000); border-color: var(--soft-red); }
         .film-btn.active { border-color: #ffcc88; color: #fff; background: linear-gradient(135deg, #5a2000, #8a3000); }
 
@@ -653,7 +216,6 @@
     </div>
 </header>
 
-<!-- TOP-100 MODAL -->
 <div class="modal-overlay" id="top100Modal">
     <div class="modal-box">
         <div class="modal-header">
@@ -667,136 +229,7 @@
 </div>
 
 <div id="searchResults"></div>
-
-<div id="homeScreen" class="home-screen">
-    <div class="anime-card" onclick="openAnime('APRIL_LIE')">
-        <img data-anilist="20665" src="" alt="Your Lie in April">
-        <div class="card-info">
-            <h3>ТВОЯ АПРЕЛЬСКАЯ ЛОЖЬ</h3>
-            <p>Мелодія серця (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('KUSURIYA')">
-        <img data-anilist="161645" src="" alt="The Apothecary Diaries">
-        <div class="card-info">
-            <h3>МОНОЛОГ ФАРМАЦЕВТА</h3>
-            <p>Таємниці палацу (С1-С2)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('JOE')">
-        <img data-anilist="2402" src="" alt="Ashita no Joe">
-        <div class="card-info">
-            <h3>ЗАВТРАШНИЙ ДЖО</h3>
-            <p>Класика боксу (С1-С2)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('FRIEREN')">
-        <img data-anilist="154587" src="" alt="Frieren">
-        <div class="card-info">
-            <h3>ФРИРЕН</h3>
-            <p>Магічна подорож (С1-С2)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('LAGANN')">
-        <img data-anilist="2001" src="" alt="Gurren Lagann">
-        <div class="card-info">
-            <h3>ГУРРЕН-ЛАГАНН</h3>
-            <p>Бур, що прониже небеса (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('EVA')">
-        <img data-anilist="30" src="" alt="Evangelion">
-        <div class="card-info">
-            <h3>ЕВАНГЕЛИОН</h3>
-            <p>Лізь у робота, Сіндзі (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('BERSERK')">
-        <img data-anilist="33" src="" alt="Berserk">
-        <div class="card-info">
-            <h3>БЕРСЕРК</h3>
-            <p>Чорний мечник (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('VINLAND')">
-        <img data-anilist="101348" src="" alt="Vinland Saga">
-        <div class="card-info">
-            <h3>САГА О ВИНЛАНДЕ</h3>
-            <p>Шлях вікінга (С1-С2)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('JIGOKU')">
-        <img data-anilist="128893" src="" alt="Jigokuraku">
-        <div class="card-info">
-            <h3>АДСКИЙ РАЙ</h3>
-            <p>Пекло та рай (С1-С2)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('FMA')">
-        <img data-anilist="121" src="" alt="Fullmetal Alchemist">
-        <div class="card-info">
-            <h3>СТАЛЬНОЙ АЛХИМИК</h3>
-            <p>Брати Елрік (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('FMAB')">
-        <img data-anilist="5114" src="" alt="Fullmetal Alchemist Brotherhood">
-        <div class="card-info">
-            <h3>СТАЛЬНОЙ АЛХИМИК: БРАТСТВО</h3>
-            <p>Повна адаптація манги (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('DRSTONE')">
-        <img data-anilist="105333" src="" alt="Dr. Stone">
-        <div class="card-info">
-            <h3>ДОКТОР СТОУН</h3>
-            <p>Наука проти природи (С1-С6)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('CSM')">
-        <img data-anilist="127230" src="" alt="Chainsaw Man">
-        <div class="card-info">
-            <h3>ЧЕЛОВЕК-БЕНЗОПИЛА</h3>
-            <p>Деnji та його бензопила (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('GTO')">
-        <img data-anilist="245" src="" alt="GTO">
-        <div class="card-info">
-            <h3>КРУТОЙ УЧИТЕЛЬ ОНИДЗУКА</h3>
-            <p>Найкращий вчитель (С1)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('DANDADAN')">
-        <img data-anilist="171018" src="" alt="Dandadan">
-        <div class="card-info">
-            <h3>ДАНДАДАН</h3>
-            <p>Прибульці та привиди (С1-С2)</p>
-        </div>
-    </div>
-
-    <div class="anime-card" onclick="openAnime('OSHINOKO')">
-        <img data-anilist="166531" src="" alt="Oshi no Ko">
-        <div class="card-info">
-            <h3>РЕБЁНОК ИДОЛА</h3>
-            <p>Зірки та таємниці (С1-С3)</p>
-        </div>
-    </div>
-</div>
+<div id="homeScreen" class="home-screen"></div>
 
 <div id="playerScreen" class="player-screen">
     <button class="back-btn" onclick="showHome()">← На головну</button>
@@ -810,7 +243,6 @@
             <h1 id="animeTitle" style="color:var(--soft-red); margin-top:16px; font-family:'Stalinist One'; font-size:1.4rem;"></h1>
 
             <div class="info-panel">
-                <!-- Рейтинг MAL -->
                 <div class="mal-rating" id="malRating">
                     <div class="mal-score" id="malScore">—</div>
                     <div class="mal-info">
@@ -821,7 +253,6 @@
                     <a id="malLink" class="mal-link" href="#" target="_blank">MAL →</a>
                 </div>
 
-                <!-- Опис -->
                 <div class="desc-box">
                     <div class="desc-header">
                         <div class="desc-title">📖 ПРО АНІМЕ</div>
@@ -829,13 +260,11 @@
                     <div class="desc-text" id="animeDesc">Завантаження...</div>
                 </div>
 
-                <!-- Авто-трекер серій -->
                 <div class="tracker-box">
                     <div class="tracker-title">📌 МОЯ СЕРІЯ</div>
                     <div class="tracker-current" id="trackerCurrent">Ще не починав(ла)</div>
                 </div>
 
-                <!-- Fandom Wiki -->
                 <div class="fandom-box" id="fandomBox">
                     <div class="fandom-title">📚 WIKI ФАНДОМ</div>
                     <a id="fandomLink" class="fandom-link" href="#" target="_blank">
@@ -863,929 +292,205 @@
 </div>
 
 <script>
-    const ANIME_DATA = {
-        'APRIL_LIE': {
-            name: "ТВОЯ АПРЕЛЬСКАЯ ЛОЖЬ",
-            mal_id: 23273,
-            fandom_url: "https://shigatsu-wa-kimi-no-uso.fandom.com/wiki/Shigatsu_wa_Kimi_no_Uso_Wiki",
-            seasons: {
-                "Сезон 1": { 
-                    1: "https://kodikplayer.com/seria/8992/c06624871a28430d95964107b48cc230/720p", 2: "https://kodikplayer.com/seria/8993/ae60438d212b25621e4292d97c7e80dd/720p", 3: "https://kodikplayer.com/seria/8994/64ca676c67a8594ad782b5436cd1b197/720p", 4: "https://kodikplayer.com/seria/8995/93ee1af0466fafb6b06104986df26a15/720p", 5: "https://kodikplayer.com/seria/8996/5dcb3982459aac74dc4d2860693450f5/720p", 6: "https://kodikplayer.com/seria/8997/4cde367ad5018852fd683aa9ddbf1b42/720p", 7: "https://kodikplayer.com/seria/8998/a6b7ec391197ebc63eaf55d414d45b12/720p", 8: "https://kodikplayer.com/seria/8999/0decfe1aadd72d087a59e75ac97f34cd/720p", 9: "https://kodikplayer.com/seria/9000/e37a44abc1fb2e1c6ddb5d8d9beb2a16/720p", 10: "https://kodikplayer.com/seria/9001/6215a448f43daa7cbc4408e6e370d07f/720p", 11: "https://kodikplayer.com/seria/9002/261a53b367538d6127755ec0539e1ec0/720p", 12: "https://kodikplayer.com/seria/9003/5b7ffbe85801b41ee134687ec71464bf/720p", 13: "https://kodikplayer.com/seria/9004/f31739637279eb8bb66e1d3b4c4c25a2/720p", 14: "https://kodikplayer.com/seria/9005/52cd5102dc5e7b39203dbe813018d15b/720p", 15: "https://kodikplayer.com/seria/9006/634c65d0ba2e7029275de395178a998e/720p", 16: "https://kodikplayer.com/seria/276654/be1fb1a3a780b0abba3f2482cd0e08cb/720p", 17: "https://kodikplayer.com/seria/276655/ab116fce7ea61722db4abe75649c8187/720p", 18: "https://kodikplayer.com/seria/276656/14d94bba31614e99c9723a04b08d37bf/720p", 19: "https://kodikplayer.com/seria/276657/59cdbeb1718db4102b790b5e100c6fa2/720p", 20: "https://kodikplayer.com/seria/276658/057a0cbf6a9caffc6b13334f9052cde6/720p", 21: "https://kodikplayer.com/seria/276659/acc86e053d66c0d9b61f163c97388c62/720p", 22: "https://kodikplayer.com/seria/276660/f5459483b0a93e7c6170e2939ec2949f/720p"
-                }
-            }
-        },
-        'KUSURIYA': {
-            name: "МОНОЛОГ ФАРМАЦЕВТА",
-            mal_id: 54595,
-            fandom_url: "https://kusuriya.fandom.com/wiki/The_Apothecary_Diaries_Wiki",
-            season_mal_ids: { "Сезон 1": 54595, "Сезон 2": 58514 },
-            seasons: {
-                "Сезон 1": { 1: "https://kodikplayer.com/seria/1223330/95af961af7f5192a4ddf7335aac4541c/720p", 2: "https://kodikplayer.com/seria/1224037/b0d3fe4caf97762f232ed361dd10ff0f/720p", 3: "https://kodikplayer.com/seria/1224753/9df6a822342ff2f507c32a5c0124195f/720p", 4: "https://kodikplayer.com/seria/1227101/60457b85dcd0cf7e7573a666d3630cfe/720p", 5: "https://kodikplayer.com/seria/1230700/7836be4b3a5ec6722cc9972886cbef29/720p", 6: "https://kodikplayer.com/seria/1233351/60336d454f06ac9d26a3994b504ca17f/720p", 7: "https://kodikplayer.com/seria/1236454/3034f680b20e50e8a0c640c96eafd5e7/720p", 8: "https://kodikplayer.com/seria/1240154/0d49894f2746f490f007f5ced8e16b74/720p", 9: "https://kodikplayer.com/seria/1243459/aa55591de6d6176ee83d4584ab39b9ca/720p", 10: "https://kodikplayer.com/seria/1246441/80bc2038d1eb46f1598521daeee16890/720p", 11: "https://kodikplayer.com/seria/1249412/d966482f9b46f6a4b19c1df1b129a4b6/720p", 12: "https://kodikplayer.com/seria/1252139/0005fbb50af6c80708725513c0c9a106/720p", 13: "https://kodikplayer.com/seria/1256848/a9adf4f25e85b3f7671c0633d7ee6d36/720p", 14: "https://kodikplayer.com/seria/1259353/c63eddc1407057196b29ba1dc99300d4/720p", 15: "https://kodikplayer.com/seria/1262099/cbbeb460de445d7eff2dc7d573de9e03/720p", 16: "https://kodikplayer.com/seria/1265115/b1a07db5f9bde5f1d662365f4742d99e/720p", 17: "https://kodikplayer.com/seria/1267923/59073b3b83241f26e3f0589b81dbb6b7/720p", 18: "https://kodikplayer.com/seria/1271070/941010ed007ef698d7a0212087ae1acf/720p", 19: "https://kodikplayer.com/seria/1273952/41d48ab7e336dc1cc652e6bc211c4821/720p", 20: "https://kodikplayer.com/seria/1277175/b03e4dc5a469649b2ea5f50539535cd1/720p", 21: "https://kodikplayer.com/seria/1279952/f2970b44fe2ce9bf3bb895cdb03e6126/720p", 22: "https://kodikplayer.com/seria/1282734/20aab306d038ce8dfb3786658c583f69/720p", 23: "https://kodikplayer.com/seria/1285215/5600cf890ff608cd05d092202b8c462d/720p", 24: "https://kodikplayer.com/seria/1287979/f00d2e821015d076ce14f5864e638b96/720p" },
-                "Сезон 2": { 1: "https://kodikplayer.com/seria/1404523/32e41f7d136cf2abf63dae8a53c4edc8/720p", 2: "https://kodikplayer.com/seria/1407443/6684c384120d5393c9640918cd4099e7/720p", 3: "https://kodikplayer.com/seria/1410814/34ea3e78cebecdd98c8bf9785bde0266/720p", 4: "https://kodikplayer.com/seria/1414382/27a933e2ed82790b3e3c0ee4123da5e6/720p", 5: "https://kodikplayer.com/seria/1417468/983377753155367283c85b5784093464/720p", 6: "https://kodikplayer.com/seria/1420394/84b18e57e8526bb55408a33a6673a29c/720p", 7: "https://kodikplayer.com/seria/1423581/f042d009d5658e0b57d3b775276198cf/720p", 8: "https://kodikplayer.com/seria/1426579/ccd0e466b291da60f51f1008ad68b23e/720p", 9: "https://kodikplayer.com/seria/1429553/ed5fa7f626c632199d4763765e2bcf43/720p", 10: "https://kodikplayer.com/seria/1432252/38cc4728721bcfb95d1317ca24494b62/720p", 11: "https://kodikplayer.com/seria/1435054/e5d5bc6de37f59413072a4e4a2fc67c8/720p", 12: "https://kodikplayer.com/seria/1437888/c1617ed388efbd815d5cad627d4f801d/720p", 13: "https://kodikplayer.com/seria/1440792/4a45c7179c2e2e21ec30deb3168e6c85/720p", 14: "https://kodikplayer.com/seria/1444054/168cf3832ae12feabe97c955d69af6bd/720p", 15: "https://kodikplayer.com/seria/1447358/3143f5f6e6566da43707bcc6d15ac0b4/720p", 16: "https://kodikplayer.com/seria/1450662/22f35e8b8e3452af936452c61d34e128/720p", 17: "https://kodikplayer.com/seria/1453610/18004cfbd7ce878c952e4e781edd8552/720p", 18: "https://kodikplayer.com/seria/1456529/ed56d77c4c8c085e0beccc62b2c20b6f/720p", 19: "https://kodikplayer.com/seria/1462026/4e12e71ab0cb13d77421a1c7215903cf/720p", 20: "https://kodikplayer.com/seria/1465189/373e00c5ca824c0592f217819b9fad97/720p", 21: "https://kodikplayer.com/seria/1467670/9cae3af7278ab56e7ca18931aed7b754/720p", 22: "https://kodikplayer.com/seria/1470461/1b7e638b1bf5adcb19bb7abc12e04764/720p", 23: "https://kodikplayer.com/seria/1475375/80cfdd43d71810c138ba8bb68f4f8416/720p", 24: "https://kodikplayer.com/seria/1478041/84fb4708887274204f81983f4120e7e2/720p" }
-            }
-        },
-        'JOE': {
-            name: "ЗАВТРАШНИЙ ДЖО",
-            mal_id: 2402,
-            fandom_url: "https://joe.fandom.com/wiki/Joe_Wiki",
-            season_mal_ids: { "Сезон 1": 2402, "Сезон 2": 2921 },
-            seasons: {
-                "Сезон 1": { 1: "https://kodikplayer.com/seria/685166/17c02d7aaa7d0926af73cd5422c763bd/720p", 2: "https://kodikplayer.com/seria/685167/46d6e61037d3c7e365f5dcd0257310d7/720p", 3: "https://kodikplayer.com/seria/685168/6726b6633d30252c51ad503e57bf15f2/720p", 4: "https://kodikplayer.com/seria/685169/0d9ef1eda003c624d2a13c651380c604/720p", 5: "https://kodikplayer.com/seria/686168/faddc3ccd1b65ac5074079cf2540da71/720p", 6: "https://kodikplayer.com/seria/688177/2bd6b27cd6b39a9130ddd70044baca36/720p", 7: "https://kodikplayer.com/seria/691470/bb5c84fdc525cf8f41cfbb1d4312e153/720p", 8: "https://kodikplayer.com/seria/691600/e3ddcad7b66f04bc0253a1de30cd37d7/720p", 9: "https://kodikplayer.com/seria/692640/0f2079c0b545b74acf599c9cae9ccee8/720p", 10: "https://kodikplayer.com/seria/695743/ff7d8c99a351cbe79b42f4ea1bac9970/720p", 11: "https://kodikplayer.com/seria/696636/7685178bf305008aa78e9ec115128a8b/720p", 12: "https://kodikplayer.com/seria/707134/d8af88af8bbb44ba013073b710cde958/720p", 13: "https://kodikplayer.com/seria/707136/be7e68825ca3a94e0aed4991263f7ba4/720p", 14: "https://kodikplayer.com/seria/708900/e516afd0282bd951836f8dd700b36c10/720p", 15: "https://kodikplayer.com/seria/708901/02ed6d2d72653582e5f7b8e920bc8841/720p", 16: "https://kodikplayer.com/seria/709231/390d09f81e0b445d07ef26ac8fa2f6fc/720p", 17: "https://kodikplayer.com/seria/709232/30277294eb40fb42d5dce80edf95ad6f/720p", 18: "https://kodikplayer.com/seria/709309/279ed9d09768174d73b366d13ebef88a/720p", 19: "https://kodikplayer.com/seria/711594/92967e551b35d396bcceee841a85c40c/720p", 20: "https://kodikplayer.com/seria/714363/2159e99dbe976d02236305491d6157a4/720p", 21: "https://kodikplayer.com/seria/714405/a452a4197eaedbf461cff68d79c423a6/720p", 22: "https://kodikplayer.com/seria/717403/8fca665d8a6ccb18f0e5fee4c4b1b9ed/720p", 23: "https://kodikplayer.com/seria/717404/4895612d587a17a64a431f535d0190b8/720p", 24: "https://kodikplayer.com/seria/717405/691269aa9ccc7c7f4ae714569290eb8c/720p", 25: "https://kodikplayer.com/seria/718142/ecae8dff82df33b729f5e8c386ef9dad/720p", 26: "https://kodikplayer.com/seria/718143/f3864c4c6978462fe49ac26afc5e5155/720p", 27: "https://kodikplayer.com/seria/719348/6eff574a4bd92835f5d0ee93fae6e332/720p", 28: "https://kodikplayer.com/seria/719349/7ed3802fd3f56eab5b56c54012115067/720p", 29: "https://kodikplayer.com/seria/722213/6b3678233114a615ac1b63d1f996acc7/720p", 30: "https://kodikplayer.com/seria/722214/4710afcd8f36e14deab7b25072f5345d/720p", 31: "https://kodikplayer.com/seria/722215/253097e4f6a1fd826c2c850550d8d563/720p", 32: "https://kodikplayer.com/seria/722216/fa86d75ee1ae9eef4afab189260d77b0/720p", 33: "https://kodikplayer.com/seria/723650/d4e080fc469e5a23393a1f9175333c89/720p", 34: "https://kodikplayer.com/seria/723651/bbbebcb9a7ba1f72a530535329aaaa1f/720p", 35: "https://kodikplayer.com/seria/723652/ec1a35086515d6072a2bf70f4a048036/720p", 36: "https://kodikplayer.com/seria/723653/40c66adcc3f1bca23d206afd9b71e007/720p", 37: "https://kodikplayer.com/seria/723654/c3c7adb465bd880f41e8f5a72567a2b8/720p", 38: "https://kodikplayer.com/seria/723655/d11b501e73bb13d0ce77bffbabc4edde/720p", 39: "https://kodikplayer.com/seria/723656/ba1c62db48a1bacb1dd97017b283ddfc/720p", 40: "https://kodikplayer.com/seria/723657/90c78a4d149e6ad61c7cb6dbceca2137/720p", 41: "https://kodikplayer.com/seria/723658/54f89b91ef506894681aec3b96f3a073/720p", 42: "https://kodikplayer.com/seria/724333/9f320645189e15f9e54df2d52e45eb47/720p", 43: "https://kodikplayer.com/seria/724334/58ff8c5a341cf490251a2502d8b903a4/720p", 44: "https://kodikplayer.com/seria/724335/882a9c55f9006e410882b2d6b004452e/720p", 45: "https://kodikplayer.com/seria/727398/3e4a8bb4e94dcb53cbc13dc1b00b4894/720p", 46: "https://kodikplayer.com/seria/727399/f77856b56f0e222bea71cb1b7b5a4d51/720p", 47: "https://kodikplayer.com/seria/727400/46cd912410c3a4c69114925047a9f3cb/720p", 48: "https://kodikplayer.com/seria/727401/b5a297162201ca83fa039a69685479d3/720p", 49: "https://kodikplayer.com/seria/727402/c34a0fc8bb8d2d2e2f0c15a0603682bd/720p", 50: "https://kodikplayer.com/seria/728778/b266715ba169d87a061b4d165fbd367d/720p", 51: "https://kodikplayer.com/seria/728779/fd24762ef3d286f75080ac0066649ed2/720p", 52: "https://kodikplayer.com/seria/728780/63d0919b1dc00a0f87525e0387262b93/720p", 53: "https://kodikplayer.com/seria/728781/ceaf2af1e6b92001ed209a6f84eeded5/720p", 54: "https://kodikplayer.com/seria/728782/f6a5516447b65850922fdece5cd6de7b/720p" },
-                "Сезон 2": { 1: "https://kodikplayer.com/seria/769418/fcaa24ccc8e1704306a807d226ff01e8/720p", 2: "https://kodikplayer.com/seria/769419/24500d5a324aabfac46bcc33c58093c5/720p", 3: "https://kodikplayer.com/seria/769957/c670660a342cfaaa559dee5364bd28e4/720p", 4: "https://kodikplayer.com/seria/769958/5c4db5aa9be1b73918282cde4c2a1422/720p", 5: "https://kodikplayer.com/seria/790909/3c1454ce6c23fe47f6d9d7b0bd5971ef/720p", 6: "https://kodikplayer.com/seria/790910/b278ba084c5a182385becf1a17de49c6/720p", 7: "https://kodikplayer.com/seria/794197/5267155abfce80b45679c966b1a51ddd/720p", 8: "https://kodikplayer.com/seria/794199/5bf9bafa8820c5471681eda05cb8ce71/720p", 9: "https://kodikplayer.com/seria/804554/a60b4f3d871a6fff0eafccd2ae1d19a0/720p", 10: "https://kodikplayer.com/seria/817974/7a96480fe0f391f823f0ab125d177a4a/720p", 11: "https://kodikplayer.com/seria/817975/5aaed6ae1c0c0c6a0a94910ec4c494be/720p", 12: "https://kodikplayer.com/seria/817976/e51beaeb1c75d689b82a2443e41e5b08/720p", 13: "https://kodikplayer.com/seria/817977/0038035f63b06d6d7fe15d0931ac8b3e/720p", 14: "https://kodikplayer.com/seria/817978/8a950ccb0483150d07bf579e45add609/720p", 15: "https://kodikplayer.com/seria/817979/689d0986734ca1aa0f6b4aa83d7fc7e2/720p", 16: "https://kodikplayer.com/seria/819167/6f2a24a4728dcaaa4128d873625fd1d9/720p", 17: "https://kodikplayer.com/seria/822328/92bf1243ff3055161e073dd8d3f2bf93/720p", 18: "https://kodikplayer.com/seria/822329/5b05fe014e7afcbfb97dd27388da5618/720p", 19: "https://kodikplayer.com/seria/835640/cc390fedaf73b94b582765a3dcf71256/720p", 20: "https://kodikplayer.com/seria/835641/59b13936408ce5cae085c1f4f0d62b94/720p", 21: "https://kodikplayer.com/seria/835642/1fb449d78ea27251de349b76fa88f830/720p", 22: "https://kodikplayer.com/seria/850423/b941395d0f2bb6da947be4b928cb9ba2/720p", 23: "https://kodikplayer.com/seria/850424/ce5a58552f46e2e41bccdc3bdd9d0220/720p", 24: "https://kodikplayer.com/seria/850435/350b9d2d733b1d9a22af8a5a2161cb73/720p", 25: "https://kodikplayer.com/seria/850436/c54f6714bf7cc16b02c4769c65b5012e/720p", 26: "https://kodikplayer.com/seria/850437/80cc95c6d03cb4920b96e323969e01cd/720p", 27: "https://kodikplayer.com/seria/850438/a93496c6dd66b9d94cfb0a9cab10eec0/720p", 28: "https://kodikplayer.com/seria/850439/f3a7997b21ca7dd82b1d7c22893f09f2/720p", 29: "https://kodikplayer.com/seria/850440/3f11ea47db344ac4870366f992e0b57f/720p", 30: "https://kodikplayer.com/seria/850441/d39e729f2f734f61cb62f4d955009964/720p", 31: "https://kodikplayer.com/seria/850442/8904b2f02c61839460ac5f7c3846920b/720p", 32: "https://kodikplayer.com/seria/862592/35a29d599f3c5ebd58709140634053df/720p", 33: "https://kodikplayer.com/seria/862593/99ef5a03deaceccca031fc683490a39c/720p", 34: "https://kodikplayer.com/seria/862594/507cdb61ff939cfcab456fb74ce02c08/720p", 35: "https://kodikplayer.com/seria/862595/9506e2c167f93ab6d919cb42597701d9/720p", 36: "https://kodikplayer.com/seria/880777/1ec3b262ff73a06e10d19d86ba0fcfd0/720p", 37: "https://kodikplayer.com/seria/880778/72089a7c113ea2de58b506e868c8c1df/720p", 38: "https://kodikplayer.com/seria/880779/ad1cc75cadfa7d5a91e63dd4be8fac7d/720p", 39: "https://kodikplayer.com/seria/880780/6cd476bba316a80adbc583ad13fca718/720p", 40: "https://kodikplayer.com/seria/880781/1bffc15f887654a463fc900602ec923e/720p", 41: "https://kodikplayer.com/seria/880782/797b877cc603180ba668c6041c2ce35d/720p", 42: "https://kodikplayer.com/seria/880783/3ad080507639f93ce6444834cbcb461a/720p", 43: "https://kodikplayer.com/seria/880784/0f12f9d3deefbb161b4ed3708a15be96/720p", 44: "https://kodikplayer.com/seria/880785/4fe810519e4e4e8a23a9a9b866d599f0/720p", 45: "https://kodikplayer.com/seria/880786/25fc684d3b41ffb026613517385d6afa/720p", 46: "https://kodikplayer.com/seria/880787/38c51c06a315823e76d276c327281a76/720p", 47: "https://kodikplayer.com/seria/880788/81681e35137aad87c8d421659ed5349e/720p" }
-            }
-        },
-        'FRIEREN': {
-            name: "ФРИРЕН",
-            mal_id: 52991,
-            fandom_url: "https://frieren.fandom.com/wiki/Frieren_Wiki",
-            season_mal_ids: { "Сезон 1": 52991, "Сезон 2": 58390 },
-            seasons: {
-                "Сезон 1": { 1: "https://kodikplayer.com/seria/1211977/d5a209e95d68094e346175d7357ef0c7/720p", 2: "https://kodikplayer.com/seria/1211978/82c54f718033883ac831ee0648825210/720p", 3: "https://kodikplayer.com/seria/1211979/9acc04e83b38131ba3ad14a7928548c2/720p", 4: "https://kodikplayer.com/seria/1211980/baeecb6aba81cf4043bed56e3c11e574/720p", 5: "https://kodikplayer.com/seria/1215024/b70573fe9b4d0b80af193655409fd6c4/720p", 6: "https://kodikplayer.com/seria/1219113/96dc4c0c64ab145dea47c76bd0883d21/720p", 7: "https://kodikplayer.com/seria/1222220/cc6590efefdf61c5173dd521551721d6/720p", 8: "https://kodikplayer.com/seria/1226379/88b371b80ffb36e1b46dd4541ed9557a/720p", 9: "https://kodikplayer.com/seria/1229960/2deb523e01575807252981c91cd3dc95/720p", 10: "https://kodikplayer.com/seria/1232598/a84858cadff31a43a230e1f5ab7f891b/720p", 11: "https://kodikplayer.com/seria/1235833/1b1b98da278c2bfe333cebcd2a406324/720p", 12: "https://kodikplayer.com/seria/1239475/c0aff6e5bf947c2e96fc3c504864fab0/720p", 13: "https://kodikplayer.com/seria/1242866/03a08ebc69a2dd81d95bc050847e4c9b/720p", 14: "https://kodikplayer.com/seria/1245593/5868878dd735e38a951f3c6dc218ad23/720p", 15: "https://kodikplayer.com/seria/1248782/bdb98485532398539f38f0ad1cc26edb/720p", 16: "https://kodikplayer.com/seria/1251433/efa20c96036fcd4aeddec122771c188e/720p", 17: "https://kodikplayer.com/seria/1256268/c5af62598dae6014b139580b4d5e6414/720p", 18: "https://kodikplayer.com/seria/1258996/00bef7560fdc57d8e48b804d747d3a0d/720p", 19: "https://kodikplayer.com/seria/1261601/fd0a3e7a4bfbfbf555949ddd3a0dea73/720p", 20: "https://kodikplayer.com/seria/1264453/b5b06f62c35dd2d61de2f384d989c1aa/720p", 21: "https://kodikplayer.com/seria/1267315/bd08a3b6d8a234a0c779e5b3188eb351/720p", 22: "https://kodikplayer.com/seria/1270580/b645f1c4943e75d76c5b5532ef8955b4/720p", 23: "https://kodikplayer.com/seria/1273169/c52dbcc623828ce686c224ad7426de76/720p", 24: "https://kodikplayer.com/seria/1276680/1ebf61bf04227b99d8e8d6f685d4ba53/720p", 25: "https://kodikplayer.com/seria/1279429/8d49e4fe82aa1c6f2cc1cbfabb845876/720p", 26: "https://kodikplayer.com/seria/1282083/94b813b05aeca33cd1f9534d3399fbac/720p", 27: "https://kodikplayer.com/seria/1284730/f6ebb5b8faeeecefcf1ef21d500a55f8/720p", 28: "https://kodikplayer.com/seria/1287567/e7abacac154fdbc3a4a56a2a2160abe2/720p" },
-                "Сезон 2": { 1: "https://kodikplayer.com/seria/1560133/0ec60fe51f1c2021a2cd78365a2ce6d8/720p", 2: "https://kodikplayer.com/seria/1562364/feb419343c39fb54f0478680a99eab1b/720p", 3: "https://kodikplayer.com/seria/1565106/dc61e2ce876195310c9fb6e5b85d32cd/720p", 4: "https://kodikplayer.com/seria/1568356/4e703a161d32ad3514a2ef69164c604f/720p", 5: "https://kodikplayer.com/seria/1571534/24d7ab6d710d8b76efe0c2c5be23587c/720p", 6: "https://kodikplayer.com/seria/1577158/f4527e54060c58a46e43dd0cb68c2d86/720p", 7: "https://kodikplayer.com/seria/1579318/69b6efb9cbf67c550478680a99eab1b/720p", 8: "https://kodikplayer.com/seria/1582212/7c997bd26de2de97aa586711631b0c6a/720p", 9: "https://kodikplayer.com/seria/1584051/37a265d5b9a8e8287819810964aed0cb/720p", 10: "https://kodikplayer.com/seria/1585880/bd789458b5710336f0212d679a06da38/720p" }
-            }
-        },
-        'LAGANN': {
-            name: "ГУРРЕН-ЛАГАНН",
-            mal_id: 2001,
-            fandom_url: "https://gurrenlagann.fandom.com/wiki/Main_Page",
-            seasons: {
-                "Сезон 1": { 1: "https://kodikplayer.com/seria/150638/d33c1578a143ec82619d3302671e3e19/720p", 2: "https://kodikplayer.com/seria/150639/168379772c5096729b06cb8c59e3c3ea/720p", 3: "https://kodikplayer.com/seria/150640/7012985c6527eb316709129f86a3293a/720p", 4: "https://kodikplayer.com/seria/150641/66363afd2a2db1dfe396c2e461cdda57/720p", 5: "https://kodikplayer.com/seria/150642/cd374de147bdfc39cc3449921505582c/720p", 6: "https://kodikplayer.com/seria/150643/5181dfe9b8820b628d24496608f43190/720p", 7: "https://kodikplayer.com/seria/150644/ee106aa70092f7e5ccc4cd691429181d/720p", 8: "https://kodikplayer.com/seria/150645/f8121d2b6d82882aa8f60b7eecefc01f/720p", 9: "https://kodikplayer.com/seria/150646/38402c334509c0caa863393aa1f7f98b/720p", 10: "https://kodikplayer.com/seria/150647/6eaea8137919f6eb7848b55524c19817/720p", 11: "https://kodikplayer.com/seria/150648/d5b9e76877eea42a5503217d254a2db3/720p", 12: "https://kodikplayer.com/seria/150649/d90fe067d8cb31c9362dea55a8ccadf6/720p", 13: "https://kodikplayer.com/seria/150650/52c8f868f2ba2c52093ebc501ed3ab8d/720p", 14: "https://kodikplayer.com/seria/150651/ebe91236fbdd910da9f894cd7add9338/720p", 15: "https://kodikplayer.com/seria/150652/acd472033f2168d5cc5c1f90408ea75e/720p", 16: "https://kodikplayer.com/seria/150653/4d1eb39c7c95c5507b1fa84c72c28cc4/720p", 17: "https://kodikplayer.com/seria/150654/30538c78f8a8522e828f72b1ea80eb1d/720p", 18: "https://kodikplayer.com/seria/150655/67b03539338e139c04766332b8bb64c2/720p", 19: "https://kodikplayer.com/seria/150656/3ebe7e892fafde19791066013db9db2f/720p", 20: "https://kodikplayer.com/seria/150657/9fbb368389118ffa7636ef369e92bc78/720p", 21: "https://kodikplayer.com/seria/150658/abeeed2c85498d1f1bb6f4cae73c4920/720p", 22: "https://kodikplayer.com/seria/150659/57ca41769306211e720767d7ebd6e6ed/720p", 23: "https://kodikplayer.com/seria/150660/5e3ac617a44b689fafeb89a2107580fb/720p", 24: "https://kodikplayer.com/seria/150661/176c3872cd8ba30facfe5f434fb73739/720p", 25: "https://kodikplayer.com/seria/150662/4f80954cfcd5a0a923c685910d10bcf5/720p", 26: "https://kodikplayer.com/seria/150663/2da8c03e28c2862dcd7f5847daa812c7/720p", 27: "https://kodikplayer.com/seria/150664/7ac4445ec2f4e6db2ee66131ebb5dbcd/720p" }
-            }
-        },
-        'EVA': {
-            name: "ЕВАНГЕЛИОН",
-            mal_id: 30,
-            fandom_url: "https://evangelion.fandom.com/wiki/Neon_Genesis_Evangelion_Wiki",
-            seasons: {
-                "Сезон 1": { 1: "https://kodikplayer.com/seria/157595/1cf89a2da7fc992bf8de2aa3d52f34e1/720p", 2: "https://kodikplayer.com/seria/157596/302b6d801268c7fdc4df969e43b8fd91/720p", 3: "https://kodikplayer.com/seria/157597/ad2a13a19101af51e72470b151956696/720p", 4: "https://kodikplayer.com/seria/157598/98ef5f9a470a4ecbbd25c4f1225f6293/720p", 5: "https://kodikplayer.com/seria/157599/190654318c638730b83061c26c8bdea3/720p", 6: "https://kodikplayer.com/seria/157600/1238d76e4f98333d9d4cf671b88a6ec5/720p", 7: "https://kodikplayer.com/seria/157601/82d34954241968cf2f536c7ec9c26dc6/720p", 8: "https://kodikplayer.com/seria/157602/991fec00fa0cab64a1a74173ce6163a1/720p", 9: "https://kodikplayer.com/seria/157603/26d58940a552fc0ab86bf61098edeb18/720p", 10: "https://kodikplayer.com/seria/157604/3c4bd8a0a44f4d2f9b33cccede474477/720p", 11: "https://kodikplayer.com/seria/157605/56ea4e89cafb209f466f9ed426556ba1/720p", 12: "https://kodikplayer.com/seria/157606/28bde1e420d749e98b8917d3d1ab48ac/720p", 13: "https://kodikplayer.com/seria/157607/7f1604fdbb4383af5d0613c99240f69c/720p", 14: "https://kodikplayer.com/seria/157608/f44be3f10cbad4562188c02596233e92/720p", 15: "https://kodikplayer.com/seria/157609/e07c7190110fa79b4d478bdc28656513/720p", 16: "https://kodikplayer.com/seria/157610/1a2a81f2188742a8c57a6c6355f0a11c/720p", 17: "https://kodikplayer.com/seria/157611/3d26a19d6254fa7c2be676218e8c5be1/720p", 18: "https://kodikplayer.com/seria/157612/2116b0693328735fa422174757185d03/720p", 19: "https://kodikplayer.com/seria/157613/2a9c2d23642b2e4ec963f26d1bc91662/720p", 20: "https://kodikplayer.com/seria/157614/071c4267d9725767c3276442f9cc5cfb/720p", 21: "https://kodikplayer.com/seria/157615/36cee170ee2c31781c0fd100c6aa17ec/720p", 22: "https://kodikplayer.com/seria/157616/3030256599428d250f088754728d36a8/720p", 23: "https://kodikplayer.com/seria/157617/bdcddcd87b119dae6efc77a3412de507/720p", 24: "https://kodikplayer.com/seria/157618/225940387ac3b48ceee6fa4d6cdd99bd/720p", 25: "https://kodikplayer.com/seria/157619/1b6a7a422f079b9c2368edae5f3be41f/720p", 26: "https://kodikplayer.com/seria/157620/6b0e362fb6c1135e774a4e74e975cb68/720p" }
-            }
-        },
-        'BERSERK': {
-            name: "БЕРСЕРК",
-            mal_id: 33,
-            fandom_url: "https://berserk.fandom.com/wiki/Berserk_Wiki",
-            seasons: {
-                "Сезон 1": { 1: "https://kodikplayer.com/seria/214147/ce64676936692d100fa0402af6b6e05e/720p", 2: "https://kodikplayer.com/seria/214148/47248f6f311b0dc391660817e968b44d/720p", 3: "https://kodikplayer.com/seria/214149/13d569f5c63ffb3d152a00d540a764b7/720p", 4: "https://kodikplayer.com/seria/214150/984e7649fd3f011282fc6d01a4de540a/720p", 5: "https://kodikplayer.com/seria/214151/5879196fd7ee49e43b27b1388ea8cce7/720p", 6: "https://kodikplayer.com/seria/214152/dbc83c34eef62a24675a893e49e3efb8/720p", 7: "https://kodikplayer.com/seria/214153/01449f1b98b563ceb5448ebd9cd4c8ca/720p", 8: "https://kodikplayer.com/seria/214154/7160ee1c17790671828ab8c55752a859/720p", 9: "https://kodikplayer.com/seria/214155/d01afdbc24676723b640d88523acc9cd/720p", 10: "https://kodikplayer.com/seria/214156/1f78b8b4350c808ee7970a3e26442fed/720p", 11: "https://kodikplayer.com/seria/214157/54a63364c89ef4fa09644ae1101fe944/720p", 12: "https://kodikplayer.com/seria/214158/7021e5597d9c89b529c1327f1fede39a/720p", 13: "https://kodikplayer.com/seria/214159/da9ab55c9ff06d172d4a503adefb2856/720p", 14: "https://kodikplayer.com/seria/214160/979377c6160dc97029a61cbc6d80af72/720p", 15: "https://kodikplayer.com/seria/214161/a4907995a03d0b4da1faaa432f124cd6/720p", 16: "https://kodikplayer.com/seria/214162/bceb23568316a020310612a43c806be2/720p", 17: "https://kodikplayer.com/seria/214163/be382bdcab037fe6f9e4b4add2966fed/720p", 18: "https://kodikplayer.com/seria/214164/a0aa05d57348847af6744b36ee6c6766/720p", 19: "https://kodikplayer.com/seria/214165/6d241ba27ecc35ca1915afb1f92c551f/720p", 20: "https://kodikplayer.com/seria/214166/265ad1540739da0ba4129cdea8c634de/720p", 21: "https://kodikplayer.com/seria/214167/422e1b7f7d5a0b578c5ec40786a688e3/720p", 22: "https://kodikplayer.com/seria/214168/9cdd51f54b05a6e04570738a8391c3b7/720p", 23: "https://kodikplayer.com/seria/214169/af1439c08c2d43c2dc87f5764ce62268/720p", 24: "https://kodikplayer.com/seria/214170/b7bdddacaef29c59b0d72bef3f83faad/720p", 25: "https://kodikplayer.com/seria/214171/697f2c3827709f539b6e381fba2929f2/720p" }
-            }
-        },
-        'VINLAND': {
-            name: "САГА О ВИНЛАНДЕ",
-            mal_id: 37521,
-            fandom_url: "https://vinlandsaga.fandom.com/wiki/Vinland_Saga_Wiki",
-            season_mal_ids: { "Сезон 1": 37521, "Сезон 2": 49387 },
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/455073/5e9074a2cab99991cbc70b8646c940e2/720p",
-                    2: "https://kodikplayer.com/seria/456845/b08028df7c7d78026df037b05fff54aa/720p",
-                    3: "https://kodikplayer.com/seria/456846/db31397f394a7b0c99564c6e94ae3981/720p",
-                    4: "https://kodikplayer.com/seria/467259/8b32913e063bdf855b04597fa5127d3c/720p",
-                    5: "https://kodikplayer.com/seria/468967/579411a9c130f22d098b2843e17e89c7/720p",
-                    6: "https://kodikplayer.com/seria/472775/dd52f6814de0546edbff7f273cdb2b06/720p",
-                    7: "https://kodikplayer.com/seria/476686/4150bfd8dc11edf0c0745f692d070543/720p",
-                    8: "https://kodikplayer.com/seria/478893/8639f14f20e126075e6f67e7e92fc109/720p",
-                    9: "https://kodikplayer.com/seria/481897/073c72e996b5c90ab3037c6b15195403/720p",
-                    10: "https://kodikplayer.com/seria/487496/9133e37b76b2724dde2b3c99d3ddaa63/720p",
-                    11: "https://kodikplayer.com/seria/488533/114fcc4891333e6eff1ed0b02d29b1ae/720p",
-                    12: "https://kodikplayer.com/seria/493841/fa2fc7cc142a09abbd7d5ab907997d48/720p",
-                    13: "https://kodikplayer.com/seria/495925/b52d2e9c84a65528bcfe54f3a496dff6/720p",
-                    14: "https://kodikplayer.com/seria/500310/491390c9d3ac154323b0482dc707990b/720p",
-                    15: "https://kodikplayer.com/seria/518763/e93ebce957f234c533a2418beaf92629/720p",
-                    16: "https://kodikplayer.com/seria/520096/a2cf195c0eb8c86915b14ab57abb0502/720p",
-                    17: "https://kodikplayer.com/seria/523094/f0545a9cb3f080d05d4e36de1c70efa8/720p",
-                    18: "https://kodikplayer.com/seria/526675/c9e4598db2f512edcda83d8e332506e8/720p",
-                    19: "https://kodikplayer.com/seria/533106/03718d0087374272ad0784e6ba3af8f9/720p",
-                    20: "https://kodikplayer.com/seria/533847/792aba9a46cbebd57fc11fc0ee8895a1/720p",
-                    21: "https://kodikplayer.com/seria/539557/c6914360e18346df546ccba6dc388eec/720p",
-                    22: "https://kodikplayer.com/seria/542021/e8c47a3175a3205360180e2dc45ea90b/720p",
-                    23: "https://kodikplayer.com/seria/546775/6118cd0eb0dae8a5525a49ff55d72044/720p",
-                    24: "https://kodikplayer.com/seria/552392/093b14b272bdc07d6e51291ccad58c48/720p"
-                },
-                "Сезон 2": {
-                    1: "https://kodikplayer.com/seria/1091161/328ae853ed7743fcb11e7f550ac74318/720p",
-                    2: "https://kodikplayer.com/seria/1093919/f90123af327310e8892e8463ea466509/720p",
-                    3: "https://kodikplayer.com/seria/1097084/d0c1a63e85233ffa47b3f20ad37d2563/720p",
-                    4: "https://kodikplayer.com/seria/1100299/d9d6e71ebb63a1f328c0d9a5ab41f53c/720p",
-                    5: "https://kodikplayer.com/seria/1103279/0b14d0ded6004e25e49db0e6942c5a51/720p",
-                    6: "https://kodikplayer.com/seria/1105807/3ab9b8d2d1edca49b8ffb78288f91a96/720p",
-                    7: "https://kodikplayer.com/seria/1109178/2b7182e3ff41a3ca57d9c8ad07254e9b/720p",
-                    8: "https://kodikplayer.com/seria/1113325/e404ab72f02efbd4d6e9379957cbd4e6/720p",
-                    9: "https://kodikplayer.com/seria/1116683/ec79beca2bde9cb8c63c88070b56b465/720p",
-                    10: "https://kodikplayer.com/seria/1120204/2938edf8e72c79a6ccf19c6257ba0e8c/720p",
-                    11: "https://kodikplayer.com/seria/1123272/28706b90235fa4a4b449266f3d7a9281/720p",
-                    12: "https://kodikplayer.com/seria/1126356/20712b533413b5b7464f7d0f28fd668a/720p",
-                    13: "https://kodikplayer.com/seria/1129658/ca7631d0cc00a3123e595774cc8a7b2f/720p",
-                    14: "https://kodikplayer.com/seria/1132131/c1b6d8afc7107263426457b05ad75f59/720p",
-                    15: "https://kodikplayer.com/seria/1135039/20135f17e32a47a8f38b901489285ed9/720p",
-                    16: "https://kodikplayer.com/seria/1138534/c10a6351ea8ce0d006dfbc91932ea620/720p",
-                    17: "https://kodikplayer.com/seria/1141770/9f4b1ca36decb63eb825d3fd51298006/720p",
-                    18: "https://kodikplayer.com/seria/1144390/a0ece9c3f965cb7442f641aafd43a03e/720p",
-                    19: "https://kodikplayer.com/seria/1147313/d5d1154b061103211833f0dbdc20bfa7/720p",
-                    20: "https://kodikplayer.com/seria/1150556/a2e034d38da7fe9bd778f5d6854ea783/720p",
-                    21: "https://kodikplayer.com/seria/1153956/7fb867bb59fdaddbdff30f03258f66b9/720p",
-                    22: "https://kodikplayer.com/seria/1156898/ebdef051689295bff7adbdeabb3228ac/720p",
-                    23: "https://kodikplayer.com/seria/1159590/ea6d07d1d9a371c8aa76c5a6214f38f4/720p",
-                    24: "https://kodikplayer.com/seria/1162483/40c5ad3f30c5412863ec42f6ba6d0bfd/720p"
-                }
-            }
-        },
-        'JIGOKU': {
-            name: "АДСКИЙ РАЙ",
-            mal_id: 50618,
-            fandom_url: "https://jigokuraku.fandom.com/wiki/Jigokuraku_Wiki",
-            season_mal_ids: { "Сезон 1": 50618, "Сезон 2": 55191 },
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/1128902/09f563b40e29dc530a513bd8e5e0ce54/720p",
-                    2: "https://kodikplayer.com/seria/1131282/1225e4abeceae2dc2cc935d96dfa9dbf/720p",
-                    3: "https://kodikplayer.com/seria/1134121/d0f09ecaabd5fb41070725ecc726ed9f/720p",
-                    4: "https://kodikplayer.com/seria/1137560/bf7599d49fd1627d8f78fbb554cef38e/720p",
-                    5: "https://kodikplayer.com/seria/1140883/3307e211539d6c508456d56df6952750/720p",
-                    6: "https://kodikplayer.com/seria/1143600/08fe0c18643b466ce66e77fa483f7a80/720p",
-                    7: "https://kodikplayer.com/seria/1146188/a580ec9bac796aad34d1f86c4473794b/720p",
-                    8: "https://kodikplayer.com/seria/1149586/398f4f194c76ce1dced5b5222e068a62/720p",
-                    9: "https://kodikplayer.com/seria/1156224/fc338aeccde9a4fb88ecb7534c450f2e/720p",
-                    10: "https://kodikplayer.com/seria/1158701/7cda39cba3924c9802aa234abd0bac87/720p",
-                    11: "https://kodikplayer.com/seria/1161409/6ba790df56d262edde639773940e05ff/720p",
-                    12: "https://kodikplayer.com/seria/1165403/fa7056df96e08655440aefc113186bfe/720p",
-                    13: "https://kodikplayer.com/seria/1168404/67cda2703ee88e83a305f82108af464b/720p"
-                },
-                "Сезон 2": {
-                    1: "https://kodikplayer.com/seria/1558511/db07c869a9bc0013d270e05d9893d2a3/720p",
-                    2: "https://kodikplayer.com/seria/1561034/e80bd36b39efbe7a01e0f2f73406c30c/720p",
-                    3: "https://kodikplayer.com/seria/1563520/ea8d9d678298617e33532f9743a3e15a/720p",
-                    4: "https://kodikplayer.com/seria/1567014/70f798fc91dee44e35ff8e38d86b231e/720p",
-                    5: "https://kodikplayer.com/seria/1570100/61b64e7fa4410bc018c8ba7ad95d57e4/720p",
-                    6: "https://kodikplayer.com/seria/1572712/28a51112df1b194b9e14695074890be4/720p",
-                    7: "https://kodikplayer.com/seria/1575414/c749ec655221e2a58945e4b3a1289faf/720p",
-                    8: "https://kodikplayer.com/seria/1577903/8b6b8846914420241f3a598c58426530/720p",
-                    9: "https://kodikplayer.com/seria/1580692/cfbd11e0a98152dd2a6a5a9d1c43f42a/720p",
-                    10: "https://kodikplayer.com/seria/1582698/a39bcd2b08c5827a7354f355ad45b3b5/720p",
-                    11: "https://kodikplayer.com/seria/1584577/5d28c4520c9bdbf6ca5b9a357c31cc82/720p",
-                    12: "https://kodikplayer.com/seria/1586643/7ebea69ca79d0db77abc8f097d3b4a58/720p"
-                }
-            }
-        },
-        'FMA': {
-            name: "СТАЛЬНОЙ АЛХИМИК",
-            mal_id: 121,
-            fandom_url: "https://fma.fandom.com/wiki/Fullmetal_Alchemist_Wiki",
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/254388/1f67af50313df82dd05c95f78ee9aa19/720p",
-                    2: "https://kodikplayer.com/seria/254389/8889efc77b2d468ff71f4a9ad6532fd4/720p",
-                    3: "https://kodikplayer.com/seria/254390/8c9a8a2f729dc7c4352eaf8f85d623e7/720p",
-                    4: "https://kodikplayer.com/seria/254391/be00ea80fc78053d67a1c2ec5e673f44/720p",
-                    5: "https://kodikplayer.com/seria/254392/6a1870cc139a6e0e1a1136561d92aaf1/720p",
-                    6: "https://kodikplayer.com/seria/254393/0fb1a052f22a71ab0855da7693781ba8/720p",
-                    7: "https://kodikplayer.com/seria/254394/cc8c23845232d8acfddbd101c1c6902b/720p",
-                    8: "https://kodikplayer.com/seria/254395/21c73c3fcc58b574081ddef7efed1800/720p",
-                    9: "https://kodikplayer.com/seria/254396/d29cb63b233a1393ac7bd055587e729e/720p",
-                    10: "https://kodikplayer.com/seria/254397/cdb963f0108a8b10cef91967ce52f215/720p",
-                    11: "https://kodikplayer.com/seria/254398/be9f7e8a00a69521e1da90c682ba1005/720p",
-                    12: "https://kodikplayer.com/seria/254399/b41dd52fd01cb4c3a070e546ec756b00/720p",
-                    13: "https://kodikplayer.com/seria/254400/fda8b9f2cb22f16865fc27740e243757/720p",
-                    14: "https://kodikplayer.com/seria/254401/591e367870c41c9d6b970b0ef762254b/720p",
-                    15: "https://kodikplayer.com/seria/254402/fe964772fa311dbd4f0953265fd5e9d1/720p",
-                    16: "https://kodikplayer.com/seria/254403/808de3a7dbed06223f91eb8ac574d209/720p",
-                    17: "https://kodikplayer.com/seria/254404/7bce1c4b38713518354ec2d78b55eb3c/720p",
-                    18: "https://kodikplayer.com/seria/254405/ece9964de979209b2b4dd91c0f976968/720p",
-                    19: "https://kodikplayer.com/seria/254406/07af2fad99addf3d3ad2103e9d553682/720p",
-                    20: "https://kodikplayer.com/seria/254407/1ffaff3935c29295f7067d4fe81be2d2/720p",
-                    21: "https://kodikplayer.com/seria/254408/49f260dcef7b34e26e672a08b2e64eab/720p",
-                    22: "https://kodikplayer.com/seria/254409/6743a957e68407bd11bd1b6dadc6fd70/720p",
-                    23: "https://kodikplayer.com/seria/254410/f6f03c0512db83d70d551c555e2eb069/720p",
-                    24: "https://kodikplayer.com/seria/254411/f813f2b2577162572edc20ac4ebecc70/720p",
-                    25: "https://kodikplayer.com/seria/254412/61350db19c812f63b8a6140afd161d3f/720p",
-                    26: "https://kodikplayer.com/seria/254413/1a7529b174ff12cd50235fd10c035d58/720p",
-                    27: "https://kodikplayer.com/seria/254414/574e606aaec98fad695362c8a053e543/720p",
-                    28: "https://kodikplayer.com/seria/254415/4bd8f2a4681e31a006397520973c6ced/720p",
-                    29: "https://kodikplayer.com/seria/254416/c39eb43ee5a05245b0fdfe0e49e0e15f/720p",
-                    30: "https://kodikplayer.com/seria/254417/bc8199cebfe9d77a184a60ecb296579a/720p",
-                    31: "https://kodikplayer.com/seria/254418/b4fb55fea7632dc47e3161f3b1d0f724/720p",
-                    32: "https://kodikplayer.com/seria/254419/7cdb20a6785135ff33fa92ff5fa52400/720p",
-                    33: "https://kodikplayer.com/seria/254420/469740fce15845597c34512ef9c8175e/720p",
-                    34: "https://kodikplayer.com/seria/254421/38285b9f81e4c18b06e41f1240a554b9/720p",
-                    35: "https://kodikplayer.com/seria/254422/28eeb97b7f795390e63a8c6a05d54608/720p",
-                    36: "https://kodikplayer.com/seria/254423/691b469c94c300b747180a84e4350536/720p",
-                    37: "https://kodikplayer.com/seria/254424/13c37403d2d37d12f8f4d13b0551584a/720p",
-                    38: "https://kodikplayer.com/seria/254425/f6772eb0439fe4247cc4ca133222fc38/720p",
-                    39: "https://kodikplayer.com/seria/254426/af6b5b1964403c4cf009c046c0058c44/720p",
-                    40: "https://kodikplayer.com/seria/254427/f65833df93ed9d305c873f49b9c605da/720p",
-                    41: "https://kodikplayer.com/seria/254428/ad0cdc5d2f58c39a5c020607d0d0f464/720p",
-                    42: "https://kodikplayer.com/seria/254429/666886f6cae4bbd4edb73f43ee94b387/720p",
-                    43: "https://kodikplayer.com/seria/254430/10ce55dc40ac0d4143ed1e47f071e999/720p",
-                    44: "https://kodikplayer.com/seria/254431/fbe2962a0f803e97615a7332cbd86093/720p",
-                    45: "https://kodikplayer.com/seria/254432/e5ae6fd5f0c3b22bc09672f619a1a243/720p",
-                    46: "https://kodikplayer.com/seria/254433/da1574ef2141dda16dc5047789165e83/720p",
-                    47: "https://kodikplayer.com/seria/254434/b79125bdc59ead1108bee0578d74099f/720p",
-                    48: "https://kodikplayer.com/seria/254435/8a25d3e39dbd99b5e92054dd624c6da0/720p",
-                    49: "https://kodikplayer.com/seria/254436/49182649cbe0053b9ee4f7ec17d54049/720p",
-                    50: "https://kodikplayer.com/seria/254437/338bb259e18f1e474cd13c4b0f3dc415/720p",
-                    51: "https://kodikplayer.com/seria/254438/c8641185eb4126bc6cdde802f2aa33b4/720p"
-                }
-            }
-        },
-        'FMAB': {
-            name: "СТАЛЬНОЙ АЛХИМИК: БРАТСТВО",
-            mal_id: 5114,
-            fandom_url: "https://fma.fandom.com/wiki/Fullmetal_Alchemist_Wiki",
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/1181271/68abf4c46914a6efab023259d2fa65c5/720p",
-                    2: "https://kodikplayer.com/seria/1181272/25d82dc6c44973a6f7af6192ac167ffb/720p",
-                    3: "https://kodikplayer.com/seria/1181273/a5c00ec07cfbaf8c4266aa17e9182139/720p",
-                    4: "https://kodikplayer.com/seria/1181274/95e666fbf1588a7aad54c51540ebaaa4/720p",
-                    5: "https://kodikplayer.com/seria/1181275/ce806a7e07268329f7a931857edf97ea/720p",
-                    6: "https://kodikplayer.com/seria/1184252/a619af270348a5440740d72890ee4528/720p",
-                    7: "https://kodikplayer.com/seria/1186836/0780015e145632c3379d964bed78a2c1/720p",
-                    8: "https://kodikplayer.com/seria/1189828/aa2db9228c3b6c39497dc230941857b0/720p",
-                    9: "https://kodikplayer.com/seria/1193507/231deccd236fe7f4f00f85d117428a90/720p",
-                    10: "https://kodikplayer.com/seria/1197067/0fc8d99125a5ecfcd7fb3e4dd75fe1e2/720p",
-                    11: "https://kodikplayer.com/seria/1201129/37418c54b0dc40f4087cfb214cf7fe52/720p",
-                    12: "https://kodikplayer.com/seria/1204162/2ada2401af476c87467ef6e0fdd04d2c/720p",
-                    13: "https://kodikplayer.com/seria/1207933/e5e9738af9b78142034d6dede933be3a/720p",
-                    14: "https://kodikplayer.com/seria/1210800/e95f36f73ba6fcc58971734104863eb6/720p",
-                    15: "https://kodikplayer.com/seria/1213901/f00239caa4cd3f690d1295847c2e6afa/720p",
-                    16: "https://kodikplayer.com/seria/1217558/f2c2fbfa50fd14202d4e0a237602bfde/720p",
-                    17: "https://kodikplayer.com/seria/1221106/1469a37ea75179f9f4eb0c9e99ba4744/720p",
-                    18: "https://kodikplayer.com/seria/1225056/d87b63e2440585a655712c2adb51dd07/720p",
-                    19: "https://kodikplayer.com/seria/1228894/76c118bd52db7bb02bd88ec48f7245d6/720p",
-                    20: "https://kodikplayer.com/seria/1231990/fabb43e1b5b54c2138d2d58f0d187250/720p",
-                    21: "https://kodikplayer.com/seria/1234854/b0545c4b94a7f1330f8578dd6dc43a9c/720p",
-                    22: "https://kodikplayer.com/seria/1238113/46bb6e07ca77cf4be4c7f31364b7b38c/720p",
-                    23: "https://kodikplayer.com/seria/1241561/6405c23021b340cfc76498e59a984ef8/720p",
-                    24: "https://kodikplayer.com/seria/1244505/90a8fa6e1a0f859ab8c807ead7db12e2/720p",
-                    25: "https://kodikplayer.com/seria/1247762/0aac44e0919f5e29b0f89a6549aa568e/720p",
-                    26: "https://kodikplayer.com/seria/1250710/5c1ba11e1337adb614978e92ff04a43e/720p",
-                    27: "https://kodikplayer.com/seria/1253238/229d14066be6ff3400da0a8abf4a4412/720p",
-                    28: "https://kodikplayer.com/seria/1258080/18d590767a37faccfb0ca7aed039422f/720p",
-                    29: "https://kodikplayer.com/seria/1260583/a8c35c8f6fdc7c4d891d0c0679cf403c/720p",
-                    30: "https://kodikplayer.com/seria/1263506/65f858528358831fadd3221e52bb033c/720p",
-                    31: "https://kodikplayer.com/seria/1266304/7c14c550a61faa6d4e3ded9948503cb0/720p",
-                    32: "https://kodikplayer.com/seria/1269575/56f44c55c2cfe0b5b311f9680a0c9171/720p",
-                    33: "https://kodikplayer.com/seria/1272774/c8844d86891d574bfb3dc1999f7a3ec4/720p",
-                    34: "https://kodikplayer.com/seria/1275650/12d7e00e2faacfe956ea74e712f11831/720p",
-                    35: "https://kodikplayer.com/seria/1278166/25eb9eded53fe5946bd6a7199c1e3ad2/720p",
-                    36: "https://kodikplayer.com/seria/1281569/b974a0457e1f25949b7fff09d1f8d43f/720p",
-                    37: "https://kodikplayer.com/seria/1283913/36fc154a95ad6353ea518db7ac6b09df/720p",
-                    38: "https://kodikplayer.com/seria/1286699/91ba597e44629cbd124e014dca55521d/720p",
-                    39: "https://kodikplayer.com/seria/1289946/9cb8838d04d39b6cad47d2e50f8aec66/720p",
-                    40: "https://kodikplayer.com/seria/1292477/19e5cc83d24700060558bdc5866a71f5/720p",
-                    41: "https://kodikplayer.com/seria/1295586/6c77f61b8acd7aac56c2dec7e8e92346/720p",
-                    42: "https://kodikplayer.com/seria/1297733/f555344fd8b3515feb5305973d312be7/720p",
-                    43: "https://kodikplayer.com/seria/1300519/641a5a5547423c954a41d1a83b925c86/720p",
-                    44: "https://kodikplayer.com/seria/1319804/3b85ba9f48d7835317d6f5aacd7d36bf/720p",
-                    45: "https://kodikplayer.com/seria/1321892/1c54d9a1e619d5079a72b2843b82a732/720p",
-                    46: "https://kodikplayer.com/seria/1324240/d2a198ef494a303bdc1cc06f5a31bc8c/720p",
-                    47: "https://kodikplayer.com/seria/1327040/65c0de91861543d4929e59009f4b82f8/720p",
-                    48: "https://kodikplayer.com/seria/1329563/68e7f7bb78fc2741de855b3e2a2a9c7c/720p",
-                    49: "https://kodikplayer.com/seria/1332015/71960048be0686f853dcaef8eaaf3309/720p",
-                    50: "https://kodikplayer.com/seria/1334716/fd9138ed8ed463763bfa8bcb78446aaf/720p",
-                    51: "https://kodikplayer.com/seria/1337580/c0ef5a3ef4c079aeeeacc6e803d13bc5/720p",
-                    52: "https://kodikplayer.com/seria/1340434/66eca12555a4fb840296c1e2ffbb6bd9/720p",
-                    53: "https://kodikplayer.com/seria/1343439/68bc6cb9ff167aaa284a46466df2170b/720p",
-                    54: "https://kodikplayer.com/seria/1345664/5aa7dd96cb67feef21471b2c1ff813a2/720p",
-                    55: "https://kodikplayer.com/seria/1348548/3a1b01803c035842102d0175832fbec4/720p",
-                    56: "https://kodikplayer.com/seria/1351460/98bc7cfbace2c4b56d889d9def1cc076/720p",
-                    57: "https://kodikplayer.com/seria/1353525/1b2c4ec05ab9b336fe3a97ad5c752fcb/720p",
-                    58: "https://kodikplayer.com/seria/1356355/62fed288e3945cb0bddf6e5933fa07a4/720p",
-                    59: "https://kodikplayer.com/seria/1359300/7b10ec6cf0fa3c765a37710d18a9438f/720p",
-                    60: "https://kodikplayer.com/seria/1361833/6e30cf62d5f043549b82c34b36458bfc/720p",
-                    61: "https://kodikplayer.com/seria/1364909/2e1bc9dbc1e7a65461e02f62220c1f4e/720p",
-                    62: "https://kodikplayer.com/seria/1367222/21804658986a41234fe53398686d0459/720p",
-                    63: "https://kodikplayer.com/seria/1369986/1c05a4695b272db54226943b4792e72b/720p",
-                    64: "https://kodikplayer.com/seria/1372690/4a7c3d620741d5380ac3a6fabc7bfbf0/720p"
-                }
-            }
-        },
-        'DRSTONE': {
-            name: "ДОКТОР СТОУН",
-            mal_id: 38691,
-            fandom_url: "https://dr-stone.fandom.com/wiki/Dr._Stone_Wiki",
-            season_mal_ids: { "Сезон 1": 38691, "Сезон 2": 40059, "Сезон 3": 49735, "Сезон 4": 53249, "Сезон 5": 57023, "Сезон 6": 58504 },
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/454607/0e87203b5aaf074040e4d93482ec1e63/720p",
-                    2: "https://kodikplayer.com/seria/457523/3956d623be26fcb2f7005a6b1ab032b3/720p",
-                    3: "https://kodikplayer.com/seria/460428/366bfe5e79e958dafecca2dd8d3bec76/720p",
-                    4: "https://kodikplayer.com/seria/463909/a74fb732280c8ca0db87d1b5baa4fc32/720p",
-                    5: "https://kodikplayer.com/seria/467238/b239f7a679e0cae9a9ce8e870b9762ca/720p",
-                    6: "https://kodikplayer.com/seria/470357/57bfd2a59a7aa2fa6e0a37c279b17bd4/720p",
-                    7: "https://kodikplayer.com/seria/473048/fbcbce5e956b88ad00bb6ca9f26ed15c/720p",
-                    8: "https://kodikplayer.com/seria/476303/9dd1080660c7f72ea9485efd5b214e77/720p",
-                    9: "https://kodikplayer.com/seria/479577/b1d608174109ec7a94416acd570df5ee/720p",
-                    10: "https://kodikplayer.com/seria/481422/e3dfb21b2c32ac0ede4ed8b15ea7ee32/720p",
-                    11: "https://kodikplayer.com/seria/484826/88ac9f7cb5796c06f9f8bbca5a81d6d5/720p",
-                    12: "https://kodikplayer.com/seria/487434/2757b553d9f19dacee0dd30f4b3f9d9b/720p",
-                    13: "https://kodikplayer.com/seria/490522/0f581ea2007d5f185ebe2367eb03c54e/720p",
-                    14: "https://kodikplayer.com/seria/494632/c39bc99b60650cfdd3beaf01e20911ce/720p",
-                    15: "https://kodikplayer.com/seria/502986/e79d222981e0f201c2799cffda4b6500/720p",
-                    16: "https://kodikplayer.com/seria/502987/3f2a252a332e6877e7e8046a5c4ecc66/720p",
-                    17: "https://kodikplayer.com/seria/516014/b8e2f1c100d27aa90580207abfd3f150/720p",
-                    18: "https://kodikplayer.com/seria/519798/a76b08b201f96241e0c8236b49c54770/720p",
-                    19: "https://kodikplayer.com/seria/523059/5d69b35def9897707f75b2c47a66c23b/720p",
-                    20: "https://kodikplayer.com/seria/525911/2228ffcb2dbe43dabb363df490897fea/720p",
-                    21: "https://kodikplayer.com/seria/528562/7ece59ff388adb2b53601cedd45ac014/720p",
-                    22: "https://kodikplayer.com/seria/533137/b8d5222f1f8b8b250c276ad0c6492073/720p",
-                    23: "https://kodikplayer.com/seria/537641/4b36b326e8f51842d15ba41f26218b19/720p",
-                    24: "https://kodikplayer.com/seria/540521/b1dc6f1340c966f0d4027647d21b6c84/720p"
-                },
-                "Сезон 2": {
-                    1: "https://kodikplayer.com/seria/768679/812f7d8a2261ef83a50845556d45d456/720p",
-                    2: "https://kodikplayer.com/seria/773796/e4f0b80c5beff6023d1c6a332af44db5/720p",
-                    3: "https://kodikplayer.com/seria/777570/2b0d103a86a61586bebbc155c895237a/720p",
-                    4: "https://kodikplayer.com/seria/780788/b148686839c8c2e2b4abccc909fd5cf6/720p",
-                    5: "https://kodikplayer.com/seria/785794/47ba6b113a7e17c83f14f7b1369f95ce/720p",
-                    6: "https://kodikplayer.com/seria/789499/255201424894447509188c9323d86b2c/720p",
-                    7: "https://kodikplayer.com/seria/793633/712a6ad75a7e48fc87137cfc653f7754/720p",
-                    8: "https://kodikplayer.com/seria/797103/cce581b8c1eb5dbe59ab4ec13e7b0d40/720p",
-                    9: "https://kodikplayer.com/seria/800201/514fb1edca306fceea5e5d367716917d/720p",
-                    10: "https://kodikplayer.com/seria/805615/1942b1e42d1048bb26d8c30478a7c30e/720p",
-                    11: "https://kodikplayer.com/seria/810077/461bbe62e66ffe3d4810dda015f2c550/720p"
-                },
-                "Сезон 3": {
-                    1: "https://kodikplayer.com/seria/1130682/ab2497edbd0221c251b98d9f7ea5ba68/720p",
-                    2: "https://kodikplayer.com/seria/1133366/684ef2ef0c3a3fdc016a8418a62ac9a6/720p",
-                    3: "https://kodikplayer.com/seria/1136937/c8a5a5f7381dc65823b27f04ad1bdd84/720p",
-                    4: "https://kodikplayer.com/seria/1139915/4aff5b98f5e2bbd766650908124bdc89/720p",
-                    5: "https://kodikplayer.com/seria/1142966/d929fa6d8025ca4974ec2eaf68f7a22f/720p",
-                    6: "https://kodikplayer.com/seria/1145484/876e50669b158f2baeeb249280c57713/720p",
-                    7: "https://kodikplayer.com/seria/1148552/87bd0afec01599f76371ed7981576e7a/720p",
-                    8: "https://kodikplayer.com/seria/1152013/b8e04d61f624475a99a244cd4afac741/720p",
-                    9: "https://kodikplayer.com/seria/1155391/894947bbe7da0b45c679386d2d71c7f9/720p",
-                    10: "https://kodikplayer.com/seria/1158110/e4c6c01bb5425f5f1dd9c6180a5143b0/720p",
-                    11: "https://kodikplayer.com/seria/1160807/33d019da80d1784c74db8238d29ebc31/720p"
-                },
-                "Сезон 4": {
-                    1: "https://kodikplayer.com/seria/1218847/4dd38843eac81f6b446791efaab6ca46/720p",
-                    2: "https://kodikplayer.com/seria/1221661/d1978d14666ccd090895f349dca48804/720p",
-                    3: "https://kodikplayer.com/seria/1225717/c67c0014603bf42e80d0294c879b14bc/720p",
-                    4: "https://kodikplayer.com/seria/1229442/6b1eb3f73a23af5ded7c54e1fa5b34af/720p",
-                    5: "https://kodikplayer.com/seria/1232427/7c9ca0977aa106084fefe5ca6b549311/720p",
-                    6: "https://kodikplayer.com/seria/1235313/267457d6066001cfb9af508f4afe121a/720p",
-                    7: "https://kodikplayer.com/seria/1238663/f926b43c984f14cb6c7b4c14f7e5325f/720p",
-                    8: "https://kodikplayer.com/seria/1242469/20394a54f530b4428f30cb380d516ad2/720p",
-                    9: "https://kodikplayer.com/seria/1245303/430a93bebeda556049e695085af4796d/720p",
-                    10: "https://kodikplayer.com/seria/1248569/2d26fb8608d706edc3f67fa771bbf878/720p",
-                    11: "https://kodikplayer.com/seria/1251145/28d3e380b21b144cc9aae4b093a82e41/720p"
-                },
-                "Сезон 5": {
-                    1: "https://kodikplayer.com/seria/1404352/730432e9dfbfd31a41610a9db35f846a/720p",
-                    2: "https://kodikplayer.com/seria/1407230/278c7be1f75bb19cb4ee798839027bb7/720p",
-                    3: "https://kodikplayer.com/seria/1410702/d901f2a13ddaa195373da9b0cd5ec9b4/720p",
-                    4: "https://kodikplayer.com/seria/1413893/87624bf1bc631e25bcdc90fb6a959d1c/720p",
-                    5: "https://kodikplayer.com/seria/1417044/1cb1d830053a53639c87d3737e0c244e/720p",
-                    6: "https://kodikplayer.com/seria/1420046/32371e62f036d440f468c75da7a6cf53/720p",
-                    7: "https://kodikplayer.com/seria/1423489/efe5cdf0c92c68d2f7a6bf25d5c6c38a/720p",
-                    8: "https://kodikplayer.com/seria/1426100/01247ef028356c81e0755b5c801d7e42/720p",
-                    9: "https://kodikplayer.com/seria/1429185/4bbcbaf4086dc23a4e4bcfced599c4b3/720p",
-                    10: "https://kodikplayer.com/seria/1431982/cce92d49c1b7ee1c96555a0e02f5587c/720p",
-                    11: "https://kodikplayer.com/seria/1434605/27af806cab41bde3a4ecb45851f746b9/720p",
-                    12: "https://kodikplayer.com/seria/1437588/c70337b78565561a39d31fc92cf82fc7/720p"
-                },
-                "Сезон 6": {
-                    1: "https://kodikplayer.com/seria/1480529/0a9b1c17906b3d9fe1ac031c3ac3a3c4/720p",
-                    2: "https://kodikplayer.com/seria/1483556/77738dd178de6c183e449ebaea7de36e/720p",
-                    3: "https://kodikplayer.com/seria/1486401/691772837fe4c7dc170e7419116042d4/720p",
-                    4: "https://kodikplayer.com/seria/1489402/b876ea1ac032af7850def11c81e29ebf/720p",
-                    5: "https://kodikplayer.com/seria/1492709/ee93171258fc32be794588f619e906dd/720p",
-                    6: "https://kodikplayer.com/seria/1496037/4830de7546aeb47dd1b59a2648847ef7/720p",
-                    7: "https://kodikplayer.com/seria/1499248/a5feb663e1d80f57c86bd20ae58de9bc/720p",
-                    8: "https://kodikplayer.com/seria/1501983/1c8306be42d3f0da4c38654e93a57044/720p",
-                    9: "https://kodikplayer.com/seria/1505413/5a0b78c3e6a375fc7d2657c1c9eb7ebd/720p",
-                    10: "https://kodikplayer.com/seria/1508664/5268ab8753b3a0a93421956d4ccc4c9b/720p",
-                    11: "https://kodikplayer.com/seria/1511563/38f431be2b7d18082e8eb703ea6e06b8/720p",
-                    12: "https://kodikplayer.com/seria/1513974/0b6f9f2c1b6eaa14c2e97756835e7805/720p"
-                }
-            }
-        },
-        'CSM': {
-            name: "ЧЕЛОВЕК-БЕНЗОПИЛА",
-            mal_id: 44511,
-            fandom_url: "https://chainsaw-man.fandom.com/wiki/Chainsaw_Man_Wiki",
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/1059265/e5c317e5d0f1cd0974160b5944b83a33/720p",
-                    2: "https://kodikplayer.com/seria/1061442/fa016baadd4067500cb59132e19424b9/720p",
-                    3: "https://kodikplayer.com/seria/1064015/71c8e8a18eee521a1e0d8a911ba266f2/720p",
-                    4: "https://kodikplayer.com/seria/1066841/236d6d988088bdce94bad6b235d7a6a0/720p",
-                    5: "https://kodikplayer.com/seria/1069967/15b9b439ba5e657f6f13fa1a3c4baadb/720p",
-                    6: "https://kodikplayer.com/seria/1072640/6486860eb8daa6e8f4d5e60f399d08d3/720p",
-                    7: "https://kodikplayer.com/seria/1074811/4ad0663190c3ecedaaab985c22662a87/720p",
-                    8: "https://kodikplayer.com/seria/1077163/d6ebe1e4c086435334bb3f1e65e5d26d/720p",
-                    9: "https://kodikplayer.com/seria/1079662/ab382cf7a95a5e1ce2f825c67990cf4b/720p",
-                    10: "https://kodikplayer.com/seria/1081931/b52ce7ec835a151d157bff0679380e3c/720p",
-                    11: "https://kodikplayer.com/seria/1084269/60e602e2a3cf7de6a795f9df347c8265/720p",
-                    12: "https://kodikplayer.com/seria/1086768/fdd15065713ea25ee25b601ea4b0f2ea/720p",
-                    "Фільм 1": "https://kodikplayer.com/video/113503/ab82f8a723a3d394a1fa4010f7e3d8f7/720p"
-                }
-            }
-        },
-        'GTO': {
-            name: "КРУТОЙ УЧИТЕЛЬ ОНИДЗУКА",
-            mal_id: 245,
-            fandom_url: "https://gto.fandom.com/wiki/GTO_Wiki",
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/44293/6708b3ccbade38325960ce5ade0a2a7b/720p",
-                    2: "https://kodikplayer.com/seria/44294/fd66be44fd0e5387b9796f88dcc8bbfc/720p",
-                    3: "https://kodikplayer.com/seria/44295/4c24bd1e10f9d61a2469638232c270f0/720p",
-                    4: "https://kodikplayer.com/seria/44296/c0b3939ecda7d12c4e0994d4dc2d0a09/720p",
-                    5: "https://kodikplayer.com/seria/44297/6f01ee70ab788abc3510bdb10fc6c191/720p",
-                    6: "https://kodikplayer.com/seria/44298/7c2c32d5c93f48d4dcaf1cdf1486731d/720p",
-                    7: "https://kodikplayer.com/seria/44299/97ce80369d13771a8b5363b8df36fc39/720p",
-                    8: "https://kodikplayer.com/seria/44300/87fd71dfd928205fefd054e668c2163d/720p",
-                    9: "https://kodikplayer.com/seria/44301/8f0d9edd00159e5ec21ae174647ea214/720p",
-                    10: "https://kodikplayer.com/seria/44302/4cb4b8613d84fb4642740067c06d08fa/720p",
-                    11: "https://kodikplayer.com/seria/44303/a0a604d885dbdd312f13d666bde72735/720p",
-                    12: "https://kodikplayer.com/seria/44304/261343a679b176e7f606b7445197dfc3/720p",
-                    13: "https://kodikplayer.com/seria/44305/229213a3a7e82edd4fb7952b52de226e/720p",
-                    14: "https://kodikplayer.com/seria/44306/6056eed89cdf49e9a0b293c5e9727320/720p",
-                    15: "https://kodikplayer.com/seria/44307/30a15f9b7bb9c2d2fd9cecd90f3400b3/720p",
-                    16: "https://kodikplayer.com/seria/44308/dcaed22c3f570e675d2ce2969e780553/720p",
-                    17: "https://kodikplayer.com/seria/44309/13181151367c38bc23567f330ecf83c4/720p",
-                    18: "https://kodikplayer.com/seria/44310/9147ac0fe1523ee6ab9cb7660c2039db/720p",
-                    19: "https://kodikplayer.com/seria/44311/1eb4e57738d28217d9c0783cb5746e90/720p",
-                    20: "https://kodikplayer.com/seria/44312/5ffdab15c355f8bb82dd4fca53ae3878/720p",
-                    21: "https://kodikplayer.com/seria/44313/c50aa154056ffefc4105b050c58d659f/720p",
-                    22: "https://kodikplayer.com/seria/44314/7b300fca204cfaebf346ca286c0593b3/720p",
-                    23: "https://kodikplayer.com/seria/44315/53396e9fa95553f93e309501a9e365a0/720p",
-                    24: "https://kodikplayer.com/seria/44316/729f2691a319fd8593a731d8da1b5dcf/720p",
-                    25: "https://kodikplayer.com/seria/44317/e4da59a1005861b940a7078cdad6a12a/720p",
-                    26: "https://kodikplayer.com/seria/44318/9ff6bb44735c0a4f23a98f2bcb376f7d/720p",
-                    27: "https://kodikplayer.com/seria/44319/3095992f55bb825964cd409e4f148b3a/720p",
-                    28: "https://kodikplayer.com/seria/44320/227b000f1f06147473effe6f4828ae5d/720p",
-                    29: "https://kodikplayer.com/seria/44321/27f4fd40c2aa755bf08169233837bec5/720p",
-                    30: "https://kodikplayer.com/seria/44322/83e62e22e0ae3bf03e5bd58c1448b184/720p",
-                    31: "https://kodikplayer.com/seria/44323/b05def117dd1a37437496c852571eaf6/720p",
-                    32: "https://kodikplayer.com/seria/44324/516dfd69e1d1a34e1f63130b2e713c71/720p",
-                    33: "https://kodikplayer.com/seria/44325/0abfae2b52702d007cc7dc7475666ba2/720p",
-                    34: "https://kodikplayer.com/seria/44326/1171a92449eddc9c12dc0f3653a7003d/720p",
-                    35: "https://kodikplayer.com/seria/44327/4ff62873f836c3a738b96e7aba394809/720p",
-                    36: "https://kodikplayer.com/seria/44328/a0e28fbf75c070e5c8b2f90963d4a7e4/720p",
-                    37: "https://kodikplayer.com/seria/44329/4f3f86bd12a0814bae2ce01401b03660/720p",
-                    38: "https://kodikplayer.com/seria/44330/525afdbbe9e6a2593d6737d7e3d7676a/720p",
-                    39: "https://kodikplayer.com/seria/44331/e1afd290caad3267e11cdb758611c6f1/720p",
-                    40: "https://kodikplayer.com/seria/44332/734a0cf3c0ce8fb76ad7b8bc7fc254ba/720p",
-                    41: "https://kodikplayer.com/seria/44333/64e28ccc87d302b72e64a91992e8661c/720p",
-                    42: "https://kodikplayer.com/seria/44334/4458e456ecced63c8befbe96276d5720/720p",
-                    43: "https://kodikplayer.com/seria/44335/dc00bd8f5c529533603f7f3368946871/720p"
-                }
-            }
-        },
-        'DANDADAN': {
-            name: "ДАНДАДАН",
-            mal_id: 57334,
-            fandom_url: "https://dandadan.fandom.com/wiki/Dandadan_Wiki",
-            season_mal_ids: { "Сезон 1": 57334, "Сезон 2": 59928 },
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/1362349/76f19eeec6e2a42e42fa2296d19e01f8/720p",
-                    2: "https://kodikplayer.com/seria/1365217/9f7ec4d865544fd3a3998017556d578a/720p",
-                    3: "https://kodikplayer.com/seria/1367737/f2c74ddd1842c9cf633cedcedec28ae3/720p",
-                    4: "https://kodikplayer.com/seria/1370491/b259f94867954f5e924579663a4f9721/720p",
-                    5: "https://kodikplayer.com/seria/1373095/895134ae31dbb08c2cdb2a8d75c2cecb/720p",
-                    6: "https://kodikplayer.com/seria/1376591/b4c04f607f1b35bfe21cd1dbe7e32305/720p",
-                    7: "https://kodikplayer.com/seria/1380082/00f46bdd3a550f6d0a13f359eea55475/720p",
-                    8: "https://kodikplayer.com/seria/1384643/f1666f9ead4c529d97cefe1d150d221e/720p",
-                    9: "https://kodikplayer.com/seria/1387507/2b72a1efcd660a2277e20332d6533b22/720p",
-                    10: "https://kodikplayer.com/seria/1390717/8fb6f704fb03470bc1333495b3f73465/720p",
-                    11: "https://kodikplayer.com/seria/1393761/57b4ab217a9504c0c7e91fa1b26a5b99/720p",
-                    12: "https://kodikplayer.com/seria/1396708/8cb45ad429595d73915259e5e824fb8c/720p"
-                },
-                "Сезон 2": {
-                    1: "https://kodikplayer.com/seria/1483325/34cd58be942b7f659aaf88d8d2b04f9c/720p",
-                    2: "https://kodikplayer.com/seria/1483326/f0c38c4699af50e6e236e70617c429bf/720p",
-                    3: "https://kodikplayer.com/seria/1483327/4ec3fcdf540deb9e899e5095b1f2df16/720p",
-                    4: "https://kodikplayer.com/seria/1486118/89ee1aaf452987abb5e05237d489d2d5/720p",
-                    5: "https://kodikplayer.com/seria/1488739/6f4beb472353f09a5f17ec044e50863c/720p",
-                    6: "https://kodikplayer.com/seria/1492100/88fa570697fe14915186482c1b653f19/720p",
-                    7: "https://kodikplayer.com/seria/1495722/0d9597ba6c2546bb31aef1175e7699d2/720p",
-                    8: "https://kodikplayer.com/seria/1498697/447a6218d70c3f34731cb63ccc611310/720p",
-                    9: "https://kodikplayer.com/seria/1501574/405e312ec1fd23f9feaccccc86d6a9d4/720p",
-                    10: "https://kodikplayer.com/seria/1504802/079a7b227ff91ab90132bd219ad06bf1/720p",
-                    11: "https://kodikplayer.com/seria/1508267/da4aff8f08193bef5804c765c456ab63/720p",
-                    12: "https://kodikplayer.com/seria/1511154/cdb8dcbf619ad113a00839608cb3becf/720p"
-                }
-            }
-        },
-        'OSHINOKO': {
-            name: "РЕБЁНОК ИДОЛА",
-            mal_id: 52034,
-            fandom_url: "https://oshinoko.fandom.com/wiki/Oshi_no_Ko_Wiki",
-            season_mal_ids: { "Сезон 1": 52034, "Сезон 2": 59108, "Сезон 3": 59109 },
-            seasons: {
-                "Сезон 1": {
-                    1: "https://kodikplayer.com/seria/1135245/e025553a3b492630d3205f76b2636d12/720p",
-                    2: "https://kodikplayer.com/seria/1135945/59d881f4bd6b9d0db2fd9cde5f0a146d/720p",
-                    3: "https://kodikplayer.com/seria/1139742/fae0720e23f5e0060b580d353924a306/720p",
-                    4: "https://kodikplayer.com/seria/1142870/bdaeee8f01b23438403b855ee0087789/720p",
-                    5: "https://kodikplayer.com/seria/1145385/0b11c56d4b852ad39a8338588cc599aa/720p",
-                    6: "https://kodikplayer.com/seria/1148554/ea8ce285bbeaf889a490cfcf5be88012/720p",
-                    7: "https://kodikplayer.com/seria/1151831/3c0a38d406ae633fe95bdcf671fd8ac1/720p",
-                    8: "https://kodikplayer.com/seria/1158045/d3bb02cf1dfbd194ef7f671a6dd4a60b/720p",
-                    9: "https://kodikplayer.com/seria/1160735/1fd6b2d3cdbb35a22da166fe4764fcf5/720p",
-                    10: "https://kodikplayer.com/seria/1164120/7b5fa039bf79a91f74b7d1f4813adfcd/720p",
-                    11: "https://kodikplayer.com/seria/1167519/066949ab996988a81267dab0b4e0be00/720p"
-                },
-                "Сезон 2": {
-                    1: "https://kodikplayer.com/seria/1327199/df978ec97d2f2d6a4fb4c586e0a2ac8b/720p",
-                    2: "https://kodikplayer.com/seria/1329788/71913b01ca5fead615494b14d191a504/720p",
-                    3: "https://kodikplayer.com/seria/1332376/36c87d967b180415d9311a501dd64bf6/720p",
-                    4: "https://kodikplayer.com/seria/1335259/162c7a746a987ace2255657eceeaf79e/720p",
-                    5: "https://kodikplayer.com/seria/1338047/4599680ca7a7d87e1aeb5772ed2829fe/720p",
-                    6: "https://kodikplayer.com/seria/1340805/6dd3af7181fecb22846ff9c75044913b/720p",
-                    7: "https://kodikplayer.com/seria/1343372/16e373681490c2909e1612076dd243be/720p",
-                    8: "https://kodikplayer.com/seria/1346078/4b48fc49c01799903a92d5cb5377dc09/720p",
-                    9: "https://kodikplayer.com/seria/1348799/645898e561ba16850ee86678718fd1fd/720p",
-                    10: "https://kodikplayer.com/seria/1354145/230cfdb9779da86c8faed13910572c8e/720p",
-                    11: "https://kodikplayer.com/seria/1356586/7d88a4e34f9e70061e0732347cf8907c/720p",
-                    12: "https://kodikplayer.com/seria/1359423/85d21a585f0247fab57d19fa58709f53/720p",
-                    13: "https://kodikplayer.com/seria/1363729/2f5ba7a5da2d039ff60d89d668b8000f/720p"
-                },
-                "Сезон 3": {
-                    1: "https://kodikplayer.com/seria/1559575/62672524229d059e05157e6685b7531d/720p",
-                    2: "https://kodikplayer.com/seria/1562047/bcbb15f2c2782625b8c6b4ecde3d85d0/720p",
-                    3: "https://kodikplayer.com/seria/1564569/61db742cbdfa011a09eab858d1fb58b3/720p",
-                    4: "https://kodikplayer.com/seria/1568013/2cebad65e15829838337ee7b9150902f/720p",
-                    5: "https://kodikplayer.com/seria/1570922/e6529eab03572d4f342a5ad2268b4c66/720p",
-                    6: "https://kodikplayer.com/seria/1573400/411604e4242fd19a1c5346aad26d0b86/720p",
-                    7: "https://kodikplayer.com/seria/1576598/1d27784ee89334631ead48c389bd8664/720p",
-                    8: "https://kodikplayer.com/seria/1579014/06ed27f736dbc75e1af465b6cfc9409c/720p",
-                    9: "https://kodikplayer.com/seria/1581662/64284bfd99645b7310de8254e05680a0/720p",
-                    10: "https://kodikplayer.com/seria/1583746/3a3cb8490dd52110de849ab268a85dea/720p",
-                    11: "https://kodikplayer.com/seria/1585673/5713bdda48c36ce1058485062347941c/720p"
-                }
-            }
-        }
-    };
+let ANIME_DATA = {};
 
-    let activeAnime = null;
-    let activeSzn = null;
-
-    /* ── ПОШУК ── */
-    function doSearch(query) {
-        const q = query.trim().toLowerCase();
-        const homeScreen = document.getElementById('homeScreen');
-        const searchResults = document.getElementById('searchResults');
-        const playerScreen = document.getElementById('playerScreen');
-
-        if (!q) {
-            searchResults.style.display = 'none';
-            searchResults.innerHTML = '';
-            homeScreen.style.display = 'grid';
-            return;
-        }
-
-        homeScreen.style.display = 'none';
-        playerScreen.style.display = 'none';
-        searchResults.style.display = 'grid';
-        searchResults.innerHTML = '';
-
-        const cards = document.querySelectorAll('#homeScreen .anime-card');
-        let found = 0;
-        cards.forEach(card => {
-            const title = card.querySelector('h3').innerText.toLowerCase();
-            const desc  = card.querySelector('p').innerText.toLowerCase();
-            if (title.includes(q) || desc.includes(q)) {
-                searchResults.appendChild(card.cloneNode(true));
-                // re-attach onclick
-                const clone = searchResults.lastChild;
-                const origOnclick = card.getAttribute('onclick');
-                clone.setAttribute('onclick', origOnclick);
-                found++;
-            }
-        });
-
-        if (found === 0) {
-            searchResults.innerHTML = '<div class="search-none">😔 Нічого не знайдено за запитом «' + query.trim() + '»</div>';
-        }
+// Завантажити дані з JSON
+async function loadAnimeData() {
+    try {
+        const response = await fetch('data/anime.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        ANIME_DATA = await response.json();
+        renderHome();
+    } catch (error) {
+        console.error('Помилка завантаження даних:', error);
+        document.getElementById('homeScreen').innerHTML = '<p style="color:#888;text-align:center;padding:40px;">Помилка завантаження даних</p>';
     }
+}
 
-    function showHome() {
-        document.getElementById('homeScreen').style.display = 'grid';
-        document.getElementById('playerScreen').style.display = 'none';
-        document.getElementById('searchResults').style.display = 'none';
-        document.getElementById('searchResults').innerHTML = '';
-        document.getElementById('searchInput').value = '';
-        document.getElementById('mainPlayer').src = '';
-    }
-
-    /* ── ПЛЕЄР ── */
-    function openAnime(id) {
-        activeAnime = id;
-        document.getElementById('homeScreen').style.display = 'none';
-        document.getElementById('searchResults').style.display = 'none';
-        document.getElementById('playerScreen').style.display = 'block';
-        document.getElementById('animeTitle').innerText = ANIME_DATA[id].name;
-        
-        const tabs = document.getElementById('seasonTabs');
-        tabs.innerHTML = '';
-        const seasonNames = Object.keys(ANIME_DATA[id].seasons);
-        
-        // Визначаємо збережений прогрес
-        const saved = localStorage.getItem('tracker_' + id); // напр. "Сезон 2 — Серія 5"
-        let savedSzn = null, savedEp = null;
-        if (saved) {
-            const m = saved.match(/^(.+) — Серія (\d+)$/);
-            if (m) { savedSzn = m[1]; savedEp = m[2]; }
-        }
-
-        seasonNames.forEach((sn, idx) => {
-            const btn = document.createElement('button');
-            btn.className = 'szn-btn' + (idx === 0 ? ' active' : '');
-            btn.innerText = sn;
-            // Зелена крапка якщо є прогрес у цьому сезоні
-            if (savedSzn === sn) btn.classList.add('has-progress');
-            btn.onclick = () => loadSeason(sn);
-            tabs.appendChild(btn);
-        });
-
-        // Якщо є збережений прогрес — відкриваємо той сезон
-        const startSzn = (savedSzn && ANIME_DATA[id].seasons[savedSzn]) ? savedSzn : seasonNames[0];
-        loadSeason(startSzn, savedSzn === startSzn ? savedEp : null);
-        loadMalData(id, startSzn);
-        loadTracker();
-        loadFandomWiki(id);
-    }
-
-    /* ── СЕЗОН з оновленням рейтингу ── */
-    function loadSeason(szn, savedEp) {
-        activeSzn = szn;
-        document.querySelectorAll('.szn-btn').forEach(b => {
-            b.classList.toggle('active', b.innerText === szn);
-        });
-
-        const grid = document.getElementById('episodesGrid');
-        grid.innerHTML = '';
-        const episodes = ANIME_DATA[activeAnime].seasons[szn];
-
-        // Визначаємо поточний прогрес якщо savedEp не передано
-        if (!savedEp) {
-            const saved = localStorage.getItem('tracker_' + activeAnime);
-            if (saved) {
-                const m = saved.match(/^(.+) — Серія (\d+)$/);
-                if (m && m[1] === szn) savedEp = m[2];
-            }
-        }
-
-        for (let num in episodes) {
-            const isFilm = isNaN(num);
-            if (isFilm) continue;
-
-            const item = document.createElement('div');
-            item.className = 'ep-item';
-            item.innerText = num;
-            // Зелена полоска на збереженій серії
-            if (savedEp && String(num) === String(savedEp)) {
-                item.classList.add('watched');
-            }
-            item.onclick = () => {
-                document.querySelectorAll('.ep-item').forEach(i => i.classList.remove('active'));
-                document.querySelectorAll('.film-btn').forEach(b => b.classList.remove('active'));
-                item.classList.add('active');
-                document.getElementById('mainPlayer').src = episodes[num];
-                autoSaveTracker(szn, num);
-                // Оновити зелені полоски
-                document.querySelectorAll('.ep-item').forEach(i => i.classList.remove('watched'));
-                item.classList.add('watched');
-                // Оновити крапку на кнопці сезону
-                document.querySelectorAll('.szn-btn').forEach(b => {
-                    b.classList.toggle('has-progress', b.innerText === szn);
-                });
-            };
-            grid.appendChild(item);
-        }
-
-        const filmSection = document.getElementById('filmSection');
-        filmSection.innerHTML = '';
-        filmSection.style.display = 'none';
-        const filmKeys = Object.keys(episodes).filter(k => isNaN(k));
-        if (filmKeys.length > 0) {
-            filmSection.style.display = 'block';
-            filmKeys.forEach(fk => {
-                const btn = document.createElement('button');
-                btn.className = 'film-btn';
-                btn.innerHTML = `🎬 <span>${fk}</span>`;
-                btn.onclick = () => {
-                    document.querySelectorAll('.ep-item').forEach(i => i.classList.remove('active'));
-                    document.querySelectorAll('.film-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    document.getElementById('mainPlayer').src = episodes[fk];
-                };
-                filmSection.appendChild(btn);
-            });
-        }
-
-        const firstEp = Object.keys(episodes).find(k => !isNaN(k));
-        if (firstEp) {
-            document.getElementById('mainPlayer').src = episodes[firstEp];
-            if (grid.firstChild) grid.firstChild.classList.add('active');
-        }
-
-        // Оновлюємо MAL при зміні сезону
-        if (activeAnime) {
-            const sznIds = ANIME_DATA[activeAnime].season_mal_ids;
-            const sznMalId = sznIds && sznIds[szn] ? sznIds[szn] : ANIME_DATA[activeAnime].mal_id;
-            loadMalData(activeAnime, szn, sznMalId);
-        }
-    }
-
-    /* ── MAL РЕЙТИНГ + ОПИС + ПЕРЕКЛАД ── */
-    const malCache = {};
-
-    async function translateToUk(text) {
-        try {
-            const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=uk&dt=t&q=${encodeURIComponent(text)}`;
-            const res = await fetch(url);
-            const data = await res.json();
-            return data[0].map(item => item[0]).join('');
-        } catch(e) {
-            return text;
-        }
-    }
-
-    async function loadMalData(id, szn, overrideMalId) {
-        const sznIds = ANIME_DATA[id]?.season_mal_ids;
-        const mal_id = overrideMalId
-            || (sznIds && sznIds[szn] ? sznIds[szn] : ANIME_DATA[id]?.mal_id);
-
-        document.getElementById('malScore').innerText = '—';
-        document.getElementById('malMembers').innerText = '';
-        document.getElementById('malRankBadge').innerHTML = '';
-        document.getElementById('malLink').href = '#';
-        document.getElementById('animeDesc').innerText = 'Завантаження...';
-
-        if (!mal_id) {
-            document.getElementById('animeDesc').innerText = 'Опис недоступний.';
-            return;
-        }
-
-        if (malCache[mal_id]) {
-            await applyMalData(malCache[mal_id], mal_id);
-            return;
-        }
-
-        try {
-            const res = await fetch(`https://api.jikan.moe/v4/anime/${mal_id}`);
-            if (!res.ok) throw new Error();
-            const d = await res.json();
-            malCache[mal_id] = d.data;
-            await applyMalData(d.data, mal_id);
-        } catch(e) {
-            document.getElementById('animeDesc').innerText = 'Не вдалося завантажити опис.';
-        }
-    }
-
-    async function applyMalData(data, mal_id) {
-        const score = data.score ?? '—';
-        const members = data.members ? (data.members / 1000).toFixed(0) + 'K оцінок' : '';
-        const rank = data.rank ? '#' + data.rank : '';
-
-        document.getElementById('malScore').innerText = '⭐ ' + score;
-        document.getElementById('malMembers').innerText = members;
-        document.getElementById('malLink').href = `https://myanimelist.net/anime/${mal_id}`;
-
-        const badge = document.getElementById('malRankBadge');
-        if (rank) {
-            badge.innerHTML = `Місце в топі<span>${rank}</span>`;
-        }
-
-        if (data.synopsis) {
-            const cleaned = data.synopsis.replace(/\[Written by MAL Rewrite\]/g, '').trim();
-            document.getElementById('animeDesc').innerText = 'Перекладаємо...';
-            const translated = await translateToUk(cleaned);
-            document.getElementById('animeDesc').innerText = translated;
-        } else {
-            document.getElementById('animeDesc').innerText = 'Опис відсутній.';
-        }
-    }
-
-    /* ── АВТО-ТРЕКЕР СЕРІЙ ── */
-    function getTrackerKey() { return 'tracker_' + activeAnime; }
-
-    function autoSaveTracker(szn, epNum) {
-        const val = `${szn} — Серія ${epNum}`;
-        localStorage.setItem(getTrackerKey(), val);
-        renderTracker(val);
-    }
-
-    function loadTracker() {
-        const saved = localStorage.getItem(getTrackerKey());
-        renderTracker(saved);
-    }
-
-    function renderTracker(val) {
-        const el = document.getElementById('trackerCurrent');
-        if (val) {
-            el.innerHTML = '<span>' + escHtml(val) + '</span>';
-        } else {
-            el.innerText = 'Ще не починав(ла)';
-        }
-    }
-
-    /* ── FANDOM WIKI ── */
-    function loadFandomWiki(id) {
-        const url = ANIME_DATA[id]?.fandom_url;
-        const name = ANIME_DATA[id]?.name || '';
-        const link = document.getElementById('fandomLink');
-        const nameEl = document.getElementById('fandomLinkName');
-        if (url) {
-            link.href = url;
-            nameEl.innerText = name + ' — Fandom Wiki';
-        } else {
-            link.href = `https://www.fandom.com/search?q=${encodeURIComponent(name)}`;
-            nameEl.innerText = 'Знайти вікі для ' + name;
-        }
-    }
-
-    /* ── ТОП-100 MAL ── */
-    let top100Loaded = false;
-
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-    async function openTop100() {
-        document.getElementById('top100Modal').classList.add('open');
-        if (top100Loaded) return;
-        const body = document.getElementById('top100Body');
-        try {
-            body.innerHTML = '<div class="top-loading">⏳ Завантаження рейтингу...</div>';
-
-            const all = [];
-            for (let page = 1; page <= 4; page++) {
-                if (page > 1) await sleep(400);
-                const res = await fetch(`https://api.jikan.moe/v4/top/anime?limit=25&page=${page}&type=tv`);
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                const d = await res.json();
-                all.push(...d.data);
-                body.innerHTML = `<div class="top-loading">Завантажено ${all.length} з 100...</div>`;
-            }
-
-            body.innerHTML = '';
-            all.slice(0, 100).forEach((anime, i) => {
-                const rank = i + 1;
-                let rankClass = '';
-                if (rank === 1) rankClass = 'gold';
-                else if (rank === 2) rankClass = 'silver';
-                else if (rank === 3) rankClass = 'bronze';
-
-                const item = document.createElement('div');
-                item.className = 'top-item';
-                item.innerHTML = `
-                    <div class="top-rank ${rankClass}">${rank}</div>
-                    <img class="top-img" src="${anime.images?.jpg?.image_url || ''}" alt="${anime.title}" loading="lazy">
-                    <div class="top-info">
-                        <div class="top-title">${anime.title}</div>
-                        <div class="top-score">⭐ ${anime.score ?? 'N/A'} &nbsp;·&nbsp; ${anime.type ?? ''} &nbsp;·&nbsp; ${anime.episodes ? anime.episodes + ' еп.' : '?'}</div>
-                    </div>`;
-                body.appendChild(item);
-            });
-            top100Loaded = true;
-        } catch(e) {
-            body.innerHTML = `<div class="top-loading">😔 Помилка: ${e.message}<br><br><button onclick="top100Loaded=false;openTop100()" style="background:var(--glam-red);color:#fff;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-family:Montserrat,sans-serif;">🔄 Спробувати знову</button></div>`;
-        }
-    }
-
-    function closeTop100() {
-        document.getElementById('top100Modal').classList.remove('open');
-    }
-
-    document.getElementById('top100Modal').addEventListener('click', function(e) {
-        if (e.target === this) closeTop100();
+function renderHome() {
+    const homeScreen = document.getElementById('homeScreen');
+    homeScreen.innerHTML = '';
+    
+    Object.keys(ANIME_DATA).forEach(key => {
+        const anime = ANIME_DATA[key];
+        const card = document.createElement('div');
+        card.className = 'anime-card';
+        card.onclick = () => openAnime(key);
+        card.innerHTML = `
+            <img src="https://img.anilibs.com/character/${anime.mal_id}_1.jpg" alt="${anime.name}" onerror="this.src='https://via.placeholder.com/280x420?text=${anime.name}'">
+            <div class="card-info">
+                <h3>${anime.name}</h3>
+                <p>${anime.description || 'Аніме'}</p>
+            </div>
+        `;
+        homeScreen.appendChild(card);
     });
+}
 
-    function escHtml(str) {
-        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function showHome() {
+    document.getElementById('homeScreen').style.display = 'grid';
+    document.getElementById('playerScreen').style.display = 'none';
+    document.getElementById('searchResults').style.display = 'none';
+}
+
+async function openAnime(key) {
+    const anime = ANIME_DATA[key];
+    if (!anime) return;
+    
+    document.getElementById('homeScreen').style.display = 'none';
+    document.getElementById('playerScreen').style.display = 'block';
+    document.getElementById('searchResults').style.display = 'none';
+    
+    document.getElementById('animeTitle').textContent = anime.name;
+    document.getElementById('animeDesc').textContent = anime.synopsis || 'Опис недоступний';
+    document.getElementById('fandomLink').href = anime.fandom_url;
+    
+    // Завантажити дані MAL
+    await fetchMALData(anime.mal_id || anime.season_mal_ids[Object.keys(anime.season_mal_ids)[0]]);
+    
+    renderSeasons(anime);
+    const firstSeason = Object.keys(anime.seasons)[0];
+    renderEpisodes(anime, firstSeason);
+    setActivePlayer(anime, firstSeason, 1);
+}
+
+async function fetchMALData(malId) {
+    try {
+        const response = await fetch(`https://api.jikan.moe/v4/anime/${malId}`);
+        if (!response.ok) throw new Error('MAL API error');
+        const data = await response.json();
+        const anime = data.data;
+        
+        document.getElementById('malScore').textContent = anime.score ? anime.score.toFixed(1) : '—';
+        document.getElementById('malMembers').textContent = `${(anime.members / 1000).toFixed(0)}K членів`;
+        document.getElementById('malLink').href = anime.url;
+        
+        if (anime.rank) {
+            const rankClass = anime.rank <= 3 ? 'gold' : anime.rank <= 10 ? 'silver' : 'bronze';
+            document.getElementById('malRankBadge').innerHTML = `<span class="top-rank ${rankClass}">#${anime.rank}</span>`;
+        }
+    } catch (error) {
+        console.error('MAL помилка:', error);
     }
+}
 
-    /* ── ПОСТЕРИ через AniList API ── */
-    async function loadPosters() {
-        const imgs = document.querySelectorAll('img[data-anilist]');
-        const ids = Array.from(imgs).map(img => parseInt(img.dataset.anilist));
+function renderSeasons(anime) {
+    const seasonTabs = document.getElementById('seasonTabs');
+    seasonTabs.innerHTML = '';
+    
+    Object.keys(anime.seasons).forEach(season => {
+        const btn = document.createElement('button');
+        btn.className = 'szn-btn active';
+        btn.textContent = season;
+        btn.onclick = () => {
+            document.querySelectorAll('.szn-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderEpisodes(anime, season);
+            setActivePlayer(anime, season, 1);
+        };
+        seasonTabs.appendChild(btn);
+    });
+}
 
-        const query = `query ($ids: [Int]) {
-            Page { media(id_in: $ids, type: ANIME) {
-                id coverImage { extraLarge large }
-            }}
-        }`;
+function renderEpisodes(anime, season) {
+    const episodesGrid = document.getElementById('episodesGrid');
+    episodesGrid.innerHTML = '';
+    
+    const episodes = anime.seasons[season];
+    Object.keys(episodes).forEach(ep => {
+        const epBtn = document.createElement('div');
+        epBtn.className = 'ep-item';
+        epBtn.textContent = ep;
+        epBtn.onclick = () => {
+            document.querySelectorAll('.ep-item').forEach(e => e.classList.remove('active'));
+            epBtn.classList.add('active');
+            setActivePlayer(anime, season, ep);
+        };
+        episodesGrid.appendChild(epBtn);
+    });
+}
 
-        try {
-            const res = await fetch('https://graphql.anilist.co', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ query, variables: { ids } })
-            });
-            const data = await res.json();
-            const mediaList = data.data.Page.media;
-            imgs.forEach(img => {
-                const id = parseInt(img.dataset.anilist);
-                const media = mediaList.find(m => m.id === id);
-                if (media) img.src = media.coverImage.extraLarge || media.coverImage.large;
-            });
-        } catch(e) { console.error('Помилка постерів:', e); }
+function setActivePlayer(anime, season, episode) {
+    const url = anime.seasons[season][episode];
+    document.getElementById('mainPlayer').src = url || '';
+}
+
+function doSearch(query) {
+    if (!query.trim()) {
+        document.getElementById('searchResults').style.display = 'none';
+        return;
     }
+    
+    const results = document.getElementById('searchResults');
+    results.innerHTML = '';
+    const q = query.toLowerCase();
+    let found = false;
+    
+    Object.keys(ANIME_DATA).forEach(key => {
+        const anime = ANIME_DATA[key];
+        if (anime.name.toLowerCase().includes(q)) {
+            found = true;
+            const card = document.createElement('div');
+            card.className = 'anime-card';
+            card.onclick = () => openAnime(key);
+            card.innerHTML = `
+                <img src="https://img.anilibs.com/character/${anime.mal_id}_1.jpg" alt="${anime.name}" onerror="this.src='https://via.placeholder.com/280x420?text=${anime.name}'">
+                <div class="card-info"><h3>${anime.name}</h3></div>
+            `;
+            results.appendChild(card);
+        }
+    });
+    
+    if (!found) {
+        results.innerHTML = '<div class="search-none">Аніме не знайдено</div>';
+    }
+    
+    document.getElementById('homeScreen').style.display = 'none';
+    document.getElementById('playerScreen').style.display = 'none';
+    results.style.display = 'grid';
+}
 
-    loadPosters();
+async function openTop100() {
+    const modal = document.getElementById('top100Modal');
+    modal.classList.add('open');
+    const body = document.getElementById('top100Body');
+    body.innerHTML = '<div class="top-loading">Завантаження...</div>';
+    
+    try {
+        const response = await fetch('https://api.jikan.moe/v4/top/anime?limit=100');
+        const data = await response.json();
+        body.innerHTML = '';
+        
+        data.data.forEach((anime, idx) => {
+            const rank = idx + 1;
+            let rankClass = 'gold';
+            if (rank <= 3) rankClass = 'gold';
+            else if (rank <= 10) rankClass = 'silver';
+            else if (rank <= 50) rankClass = 'bronze';
+            
+            const item = document.createElement('div');
+            item.className = 'top-item';
+            item.innerHTML = `
+                <div class="top-rank ${rankClass}">#${rank}</div>
+                <img class="top-img" src="${anime.images.jpg.small_image_url}" alt="${anime.title}">
+                <div class="top-info">
+                    <div class="top-title">${anime.title}</div>
+                    <div class="top-score">⭐ ${anime.score || '—'}</div>
+                </div>
+            `;
+            body.appendChild(item);
+        });
+    } catch (error) {
+        body.innerHTML = '<div class="top-loading">Помилка завантаження</div>';
+    }
+}
+
+function closeTop100() {
+    document.getElementById('top100Modal').classList.remove('open');
+}
+
+// Завантажити дані при завантаженні сторінки
+window.onload = loadAnimeData;
 </script>
 
 </body>
