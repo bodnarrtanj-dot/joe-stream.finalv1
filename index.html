@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Stalinist+One&display=swap" rel="stylesheet">
     <style>
         :root {
-            --glam-red: #8e0e2a; 
-            --soft-red: #c2185b; 
+            --glam-red: #8e0e2a;
+            --soft-red: #c2185b;
             --text: #e0e0e0;
             --card-bg: rgba(22, 22, 22, 0.8);
         }
@@ -43,455 +43,1176 @@
             100% { transform: scale(1.06) translate(20px, 10px); }
         }
 
-        header { background: #000; border-bottom: 3px solid var(--glam-red); padding: 16px 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.7); }
-        .logo { font-family: 'Stalinist One', cursive; color: var(--soft-red); font-size: 2rem; text-shadow: 0 0 15px var(--glam-red); cursor: pointer; transition: 0.3s; }
-        .home-screen { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .anime-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #2a2a2a; transition: 0.4s; cursor: pointer; backdrop-filter: blur(10px); }
-        .anime-card:hover { border-color: var(--soft-red); transform: translateY(-10px) scale(1.02); box-shadow: 0 10px 30px rgba(142, 14, 42, 0.6); }
-        .anime-card img { width: 100%; height: 420px; object-fit: cover; object-position: top; filter: grayscale(20%); transition: 0.4s; }
-        .anime-card:hover img { filter: grayscale(0%); }
-        .card-info { padding: 20px; background: linear-gradient(to top, #0a0a0a, transparent); }
-        .card-info h3 { margin: 0; color: var(--soft-red); font-size: 1.3rem; font-family: 'Stalinist One', cursive; }
-        .player-screen { display: none; padding: 20px 5%; }
-        .back-btn { background: var(--glam-red); color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; margin-bottom: 25px; font-weight: bold; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
-        .back-btn:hover { background: var(--soft-red); transform: translateX(-5px); }
-        .main-grid { display: grid; grid-template-columns: 1fr 350px; gap: 25px; }
-        .video-container { background: #000; border-radius: 10px; overflow: hidden; border: 3px solid var(--glam-red); box-shadow: 0 0 20px rgba(142, 14, 42, 0.5); }
-        .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; }
-        .video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
-        .ep-list { background: var(--card-bg); border-radius: 10px; padding: 20px; border: 1px solid var(--glam-red); backdrop-filter: blur(10px); }
-        .season-selector { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 15px; max-height: 120px; overflow-y: auto; padding-right: 3px; }
-        .season-selector::-webkit-scrollbar { width: 4px; }
-        .season-selector::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 4px; }
-        .szn-btn { background: #222; border: 1px solid #444; color: white; padding: 8px 14px; cursor: pointer; font-size: 0.75rem; font-family: 'Stalinist One', cursive; border-radius: 4px; white-space: nowrap; transition: 0.2s; }
-        .szn-btn.active { background: var(--glam-red); border-color: var(--soft-red); }
-        .episodes-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-height: 450px; overflow-y: auto; padding-right: 5px; }
-        .episodes-grid::-webkit-scrollbar { width: 5px; }
-        .episodes-grid::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 5px; }
-        .ep-item { background: #2a2a2a; padding: 12px; text-align: center; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; }
-        .ep-item:hover, .ep-item.active { background: var(--soft-red); transform: scale(1.1); }
+        header {
+            background: #000;
+            border-bottom: 3px solid var(--glam-red);
+            padding: 16px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-        @media (max-width: 1000px) { .main-grid { grid-template-columns: 1fr; } .logo { font-size: 1.5rem; } }
+        .logo {
+            font-family: 'Stalinist One', cursive;
+            color: var(--soft-red);
+            font-size: 2rem;
+            text-shadow: 0 0 15px var(--glam-red);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px var(--glam-red);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .top100-btn {
+            background: transparent;
+            border: 2px solid var(--glam-red);
+            color: var(--soft-red);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Stalinist One', cursive;
+            font-size: 0.75rem;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .top100-btn:hover {
+            background: var(--glam-red);
+            color: #fff;
+        }
+
+        .search-wrap {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-box {
+            display: flex;
+            width: 100%;
+            max-width: 420px;
+            border: 2px solid var(--glam-red);
+            border-radius: 30px;
+            overflow: hidden;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 14px rgba(142,14,42,0.4);
+        }
+
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 10px 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .search-box input::placeholder {
+            color: #666;
+        }
+
+        .search-box button {
+            background: var(--glam-red);
+            border: none;
+            color: #fff;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+
+        .search-box button:hover {
+            background: var(--soft-red);
+        }
+
+        .home-screen {
+            padding: 40px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .anime-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            transition: 0.4s;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .anime-card:hover {
+            border-color: var(--soft-red);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(142, 14, 42, 0.6);
+        }
+
+        .anime-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            object-position: top;
+            filter: grayscale(20%);
+            transition: 0.4s;
+        }
+
+        .anime-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .card-info {
+            padding: 20px;
+            background: linear-gradient(to top, #0a0a0a, transparent);
+        }
+
+        .card-info h3 {
+            margin: 0;
+            color: var(--soft-red);
+            font-size: 1.3rem;
+            font-family: 'Stalinist One', cursive;
+        }
+
+        .card-info p {
+            margin: 8px 0 0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .player-screen {
+            display: none;
+            padding: 20px 5%;
+        }
+
+        .back-btn {
+            background: var(--glam-red);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--soft-red);
+            transform: translateX(-5px);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 25px;
+        }
+
+        .video-container {
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid var(--glam-red);
+            box-shadow: 0 0 20px rgba(142, 14, 42, 0.5);
+        }
+
+        .video-wrap {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ep-list {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--glam-red);
+            backdrop-filter: blur(10px);
+        }
+
+        .season-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+            max-height: 120px;
+            overflow-y: auto;
+            padding-right: 3px;
+        }
+
+        .season-selector::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .season-selector::-webkit-scrollbar-thumb {
+            background: var(--glam-red);
+            border-radius: 4px;
+        }
+
+        .szn-btn {
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-family: 'Stalinist One', cursive;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .szn-btn.active {
+            background: var(--glam-red);
+            border-color: var(--soft-red);
+        }
+
+        .szn-btn.has-progress::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #2ecc71;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .episodes-grid::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .episodes-grid::-webkit-scrollbar-thumb {
+            background: var(--glam-red);
+            border-radius: 5px;
+        }
+
+        .ep-item {
+            background: #2a2a2a;
+            padding: 12px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ep-item:hover, .ep-item.active {
+            background: var(--soft-red);
+            transform: scale(1.1);
+        }
+
+        .ep-item.watched::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #2ecc71;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .film-btn-wrap {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .film-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #1a0a00, #3a1500);
+            border: 1px solid var(--glam-red);
+            color: #ffcc88;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Stalinist One', cursive;
+            font-size: 0.8rem;
+            text-align: left;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .film-btn:hover {
+            background: linear-gradient(135deg, #3a1500, #5a2000);
+            border-color: var(--soft-red);
+        }
+
+        .film-btn.active {
+            border-color: #ffcc88;
+            color: #fff;
+            background: linear-gradient(135deg, #5a2000, #8a3000);
+        }
+
+        #animeTitle {
+            color: var(--soft-red);
+            margin-top: 16px;
+            font-family: 'Stalinist One';
+            font-size: 1.4rem;
+        }
+
+        .info-panel {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .mal-rating {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 12px 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .mal-score {
+            font-family: 'Stalinist One', cursive;
+            font-size: 1.8rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .mal-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .mal-label {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mal-members {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .mal-link {
+            margin-left: auto;
+            color: var(--soft-red);
+            text-decoration: none;
+            font-size: 0.78rem;
+            border: 1px solid var(--glam-red);
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .mal-link:hover {
+            background: var(--glam-red);
+            color: #fff;
+        }
+
+        .mal-rank-badge {
+            font-size: 0.78rem;
+            color: #aaa;
+            text-align: center;
+            line-height: 1.3;
+            margin: 0 4px;
+        }
+
+        .mal-rank-badge span {
+            display: block;
+            font-family: 'Stalinist One', cursive;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .desc-box {
+            background: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .desc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .desc-title {
+            font-family: 'Stalinist One', cursive;
+            font-size: 0.85rem;
+            color: var(--soft-red);
+        }
+
+        .desc-text {
+            color: #bbb;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            max-height: 120px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .desc-text::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .desc-text::-webkit-scrollbar-thumb {
+            background: var(--glam-red);
+            border-radius: 4px;
+        }
+
+        .tracker-box {
+            background: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 14px 18px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tracker-title {
+            font-family: 'Stalinist One', cursive;
+            font-size: 0.8rem;
+            color: var(--soft-red);
+            white-space: nowrap;
+        }
+
+        .tracker-current {
+            font-size: 0.9rem;
+            color: #ccc;
+            flex: 1;
+        }
+
+        .tracker-current span {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .fandom-box {
+            background: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .fandom-title {
+            font-family: 'Stalinist One', cursive;
+            font-size: 0.85rem;
+            color: var(--soft-red);
+            margin-bottom: 14px;
+        }
+
+        .fandom-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .fandom-link-inner {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #0d0d0d, #1a0a1a);
+            border: 1px solid var(--glam-red);
+            border-radius: 10px;
+            padding: 16px 18px;
+            transition: 0.3s;
+        }
+
+        .fandom-link:hover .fandom-link-inner {
+            background: linear-gradient(135deg, #1a001a, #2a002a);
+            border-color: var(--soft-red);
+            box-shadow: 0 0 16px rgba(194, 24, 91, 0.3);
+        }
+
+        .fandom-icon {
+            font-size: 1.8rem;
+        }
+
+        .fandom-link-name {
+            font-weight: bold;
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .fandom-link-sub {
+            font-size: 0.78rem;
+            color: #666;
+        }
+
+        .fandom-arrow {
+            margin-left: auto;
+            color: var(--soft-red);
+            font-size: 1.3rem;
+        }
+
+        #searchResults {
+            padding: 20px 5% 0;
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .search-none {
+            color: #888;
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1rem;
+            grid-column: 1/-1;
+        }
+
+        /* Модальне вікно ТОП-100 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(6px);
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #0d0d0d;
+            border: 2px solid var(--glam-red);
+            border-radius: 14px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 40px rgba(142, 14, 42, 0.5);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--soft-red);
+            font-family: 'Stalinist One', cursive;
+            font-size: 1rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            padding: 12px 0;
+            flex: 1;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: var(--glam-red);
+            border-radius: 5px;
+        }
+
+        .top-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            gap: 14px;
+            border-bottom: 1px solid #1a1a1a;
+            transition: 0.2s;
+        }
+
+        .top-item:hover {
+            background: rgba(142, 14, 42, 0.15);
+        }
+
+        .top-rank {
+            font-family: 'Stalinist One', cursive;
+            font-size: 1.1rem;
+            color: var(--soft-red);
+            min-width: 36px;
+            text-align: center;
+        }
+
+        .top-rank.gold {
+            color: #ffd700;
+        }
+
+        .top-rank.silver {
+            color: #c0c0c0;
+        }
+
+        .top-rank.bronze {
+            color: #cd7f32;
+        }
+
+        .top-img {
+            width: 44px;
+            height: 62px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #333;
+        }
+
+        .top-info {
+            flex: 1;
+        }
+
+        .top-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            margin-bottom: 4px;
+        }
+
+        .top-score {
+            font-size: 0.8rem;
+            color: #ffd700;
+        }
+
+        .top-loading {
+            text-align: center;
+            padding: 40px;
+            color: #555;
+        }
+
+        /* Завантажувач */
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(6px);
+        }
+
+        #loadingOverlay .loader-text {
+            color: var(--soft-red);
+            font-family: 'Stalinist One', cursive;
+            font-size: 1.5rem;
+        }
+
+        /* Кнопка "Наверх" */
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--glam-red);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        #scrollToTop:hover {
+            background: var(--soft-red);
+            transform: scale(1.1);
+        }
+
+        /* Адаптивність */
+        @media (max-width: 1000px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
 
         @media (max-width: 600px) {
-            header { padding: 10px 4%; gap: 8px; flex-wrap: nowrap; }
-            .logo { font-size: 1rem; white-space: nowrap; }
-            .top100-btn { font-size: 0.58rem; padding: 5px 8px; margin-left: 0; white-space: nowrap; }
-            .search-wrap { flex: 1; min-width: 0; }
-            .search-box { max-width: 100%; width: 100%; }
-            .search-box input { font-size: 0.8rem; padding: 8px 10px; min-width: 0; }
-            .search-box button { padding: 8px 10px; font-size: 0.9rem; flex-shrink: 0; }
-            .home-screen { padding: 16px 3%; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .anime-card img { height: 200px; }
-            .card-info { padding: 10px 10px 12px; }
-            .card-info h3 { font-size: 0.72rem; }
-            .card-info p { font-size: 0.68rem; margin: 4px 0 0; color: #888; }
-            .player-screen { padding: 12px 3%; }
-            .back-btn { padding: 9px 16px; font-size: 0.8rem; margin-bottom: 14px; }
-            .main-grid { gap: 14px; }
-            #animeTitle { font-size: 1rem !important; margin-top: 10px !important; }
-            .info-panel { gap: 10px; }
-            .mal-rating { padding: 10px 14px; gap: 8px; }
-            .mal-score { font-size: 1.3rem; }
-            .mal-label { font-size: 0.62rem; }
-            .mal-members { font-size: 0.7rem; }
-            .mal-link { font-size: 0.7rem; padding: 4px 8px; }
-            .desc-box { padding: 12px; }
-            .desc-title { font-size: 0.75rem; }
-            .desc-text { font-size: 0.82rem; max-height: 100px; }
-            .tracker-box { padding: 10px 12px; flex-wrap: wrap; }
-            .tracker-title { font-size: 0.72rem; }
-            .tracker-current { font-size: 0.82rem; }
-            .fandom-box { padding: 12px; }
-            .fandom-title { font-size: 0.75rem; margin-bottom: 10px; }
-            .fandom-link-inner { padding: 12px 14px; gap: 10px; }
-            .fandom-icon { font-size: 1.4rem; }
-            .fandom-link-name { font-size: 0.85rem; }
-            .fandom-link-sub { font-size: 0.7rem; }
-            .ep-list { padding: 12px; }
-            .season-selector { max-height: 90px; }
-            .szn-btn { font-size: 0.65rem; padding: 6px 10px; }
-            .episodes-grid { grid-template-columns: repeat(5, 1fr); gap: 6px; max-height: 280px; }
-            .ep-item { padding: 9px 4px; font-size: 0.85rem; }
-            .film-btn { font-size: 0.72rem; padding: 10px 14px; }
+            header {
+                padding: 10px 4%;
+                gap: 8px;
+                flex-wrap: nowrap;
+            }
+            .logo {
+                font-size: 1rem;
+                white-space: nowrap;
+            }
+            .top100-btn {
+                font-size: 0.58rem;
+                padding: 5px 8px;
+                margin-left: 0;
+                white-space: nowrap;
+            }
+            .search-wrap {
+                flex: 1;
+                min-width: 0;
+            }
+            .search-box {
+                max-width: 100%;
+                width: 100%;
+            }
+            .search-box input {
+                font-size: 0.8rem;
+                padding: 8px 10px;
+                min-width: 0;
+            }
+            .search-box button {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+                flex-shrink: 0;
+            }
+
+            .home-screen {
+                padding: 16px 3%;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .anime-card img {
+                height: 200px;
+            }
+            .card-info {
+                padding: 10px 10px 12px;
+            }
+            .card-info h3 {
+                font-size: 0.72rem;
+            }
+            .card-info p {
+                font-size: 0.68rem;
+                margin: 4px 0 0;
+            }
+
+            .player-screen {
+                padding: 12px 3%;
+            }
+            .back-btn {
+                padding: 9px 16px;
+                font-size: 0.8rem;
+                margin-bottom: 14px;
+            }
+            .main-grid {
+                gap: 14px;
+            }
+            #animeTitle {
+                font-size: 1rem !important;
+                margin-top: 10px !important;
+            }
+
+            .info-panel {
+                gap: 10px;
+            }
+            .mal-rating {
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .mal-score {
+                font-size: 1.3rem;
+            }
+            .mal-label {
+                font-size: 0.62rem;
+            }
+            .mal-members {
+                font-size: 0.7rem;
+            }
+            .mal-rank-badge {
+                font-size: 0.68rem;
+            }
+            .mal-rank-badge span {
+                font-size: 0.9rem;
+            }
+            .mal-link {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+
+            .desc-box {
+                padding: 12px;
+            }
+            .desc-title {
+                font-size: 0.75rem;
+            }
+            .desc-text {
+                font-size: 0.82rem;
+                max-height: 100px;
+            }
+
+            .tracker-box {
+                padding: 10px 12px;
+                flex-wrap: wrap;
+            }
+            .tracker-title {
+                font-size: 0.72rem;
+            }
+            .tracker-current {
+                font-size: 0.82rem;
+            }
+
+            .fandom-box {
+                padding: 12px;
+            }
+            .fandom-title {
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+            }
+            .fandom-link-inner {
+                padding: 12px 14px;
+                gap: 10px;
+            }
+            .fandom-icon {
+                font-size: 1.4rem;
+            }
+            .fandom-link-name {
+                font-size: 0.85rem;
+            }
+            .fandom-link-sub {
+                font-size: 0.7rem;
+            }
+
+            .ep-list {
+                padding: 12px;
+            }
+            .season-selector {
+                max-height: 90px;
+            }
+            .szn-btn {
+                font-size: 0.65rem;
+                padding: 6px 10px;
+            }
+            .episodes-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 6px;
+                max-height: 280px;
+            }
+            .ep-item {
+                padding: 9px 4px;
+                font-size: 0.85rem;
+            }
+            .film-btn {
+                font-size: 0.72rem;
+                padding: 10px 14px;
+            }
         }
 
         @media (max-width: 380px) {
-            .home-screen { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-            .anime-card img { height: 170px; }
-            .card-info h3 { font-size: 0.65rem; }
+            .home-screen {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .anime-card img {
+                height: 170px;
+            }
+            .card-info h3 {
+                font-size: 0.65rem;
+            }
         }
-
-        .top100-btn { background: transparent; border: 2px solid var(--glam-red); color: var(--soft-red); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-family: 'Stalinist One', cursive; font-size: 0.75rem; margin-left: 16px; transition: 0.3s; white-space: nowrap; }
-        .top100-btn:hover { background: var(--glam-red); color: #fff; }
-
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(6px); }
-        .modal-overlay.open { display: flex; }
-        .modal-box { background: #0d0d0d; border: 2px solid var(--glam-red); border-radius: 14px; width: 90%; max-width: 700px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 0 40px rgba(142,14,42,0.5); }
-        .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid #2a2a2a; }
-        .modal-header h2 { margin: 0; color: var(--soft-red); font-family: 'Stalinist One', cursive; font-size: 1rem; }
-        .modal-close { background: none; border: none; color: #888; font-size: 1.5rem; cursor: pointer; line-height: 1; }
-        .modal-close:hover { color: #fff; }
-        .modal-body { overflow-y: auto; padding: 12px 0; flex: 1; }
-        .modal-body::-webkit-scrollbar { width: 5px; }
-        .modal-body::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 5px; }
-        .top-item { display: flex; align-items: center; padding: 10px 24px; gap: 14px; border-bottom: 1px solid #1a1a1a; transition: 0.2s; }
-        .top-item:hover { background: rgba(142,14,42,0.15); }
-        .top-rank { font-family: 'Stalinist One', cursive; font-size: 1.1rem; color: var(--soft-red); min-width: 36px; text-align: center; }
-        .top-rank.gold { color: #ffd700; }
-        .top-rank.silver { color: #c0c0c0; }
-        .top-rank.bronze { color: #cd7f32; }
-        .top-img { width: 44px; height: 62px; object-fit: cover; border-radius: 4px; border: 1px solid #333; }
-        .top-info { flex: 1; }
-        .top-title { font-weight: bold; font-size: 0.9rem; color: #e0e0e0; margin-bottom: 4px; }
-        .top-score { font-size: 0.8rem; color: #ffd700; }
-        .top-loading { text-align: center; padding: 40px; color: #555; }
-
-        .search-wrap { display: flex; justify-content: flex-end; }
-        .search-box { display: flex; width: 100%; max-width: 420px; border: 2px solid var(--glam-red); border-radius: 30px; overflow: hidden; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); box-shadow: 0 0 14px rgba(142,14,42,0.4); }
-        .search-box input { flex: 1; background: transparent; border: none; outline: none; color: #fff; padding: 10px 18px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; }
-        .search-box input::placeholder { color: #666; }
-        .search-box button { background: var(--glam-red); border: none; color: #fff; padding: 10px 18px; cursor: pointer; font-size: 1.1rem; transition: 0.2s; }
-        .search-box button:hover { background: var(--soft-red); }
-        #searchResults { padding: 20px 5% 0; display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .search-none { color: #888; text-align: center; padding: 40px; font-size: 1.1rem; grid-column: 1/-1; }
-
-        .info-panel { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
-        .mal-rating { display: flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px 18px; backdrop-filter: blur(10px); }
-        .mal-score { font-family: 'Stalinist One', cursive; font-size: 1.8rem; color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.4); }
-        .mal-info { display: flex; flex-direction: column; gap: 2px; }
-        .mal-label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-        .mal-members { font-size: 0.8rem; color: #888; }
-        .mal-link { margin-left: auto; color: var(--soft-red); text-decoration: none; font-size: 0.78rem; border: 1px solid var(--glam-red); padding: 5px 10px; border-radius: 5px; transition: 0.2s; }
-        .mal-link:hover { background: var(--glam-red); color: #fff; }
-
-        .desc-box { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 18px; backdrop-filter: blur(10px); }
-        .desc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .desc-title { font-family: 'Stalinist One', cursive; font-size: 0.85rem; color: var(--soft-red); }
-        .ep-item { position: relative; overflow: hidden; }
-        .ep-item.watched::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #2ecc71; border-radius: 0 0 5px 5px; }
-        .szn-btn { position: relative; }
-        .szn-btn.has-progress::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; box-shadow: 0 0 6px #2ecc71; }
-        .desc-text { color: #bbb; font-size: 0.88rem; line-height: 1.7; max-height: 120px; overflow-y: auto; padding-right: 5px; }
-        .desc-text::-webkit-scrollbar { width: 4px; }
-        .desc-text::-webkit-scrollbar-thumb { background: var(--glam-red); border-radius: 4px; }
-        .mal-rank-badge { font-size: 0.78rem; color: #aaa; text-align: center; line-height: 1.3; margin: 0 4px; }
-        .mal-rank-badge span { display: block; font-family: 'Stalinist One', cursive; font-size: 1.1rem; color: #e0e0e0; }
-
-        .tracker-box { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 14px 18px; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 12px; }
-        .tracker-title { font-family: 'Stalinist One', cursive; font-size: 0.8rem; color: var(--soft-red); white-space: nowrap; }
-        .tracker-current { font-size: 0.9rem; color: #ccc; flex: 1; }
-        .tracker-current span { color: #ffd700; font-weight: bold; }
-
-        .fandom-box { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 18px; backdrop-filter: blur(10px); }
-        .fandom-title { font-family: 'Stalinist One', cursive; font-size: 0.85rem; color: var(--soft-red); margin-bottom: 14px; }
-        .fandom-link { text-decoration: none; display: block; }
-        .fandom-link-inner { display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #0d0d0d, #1a0a1a); border: 1px solid var(--glam-red); border-radius: 10px; padding: 16px 18px; transition: 0.3s; }
-        .fandom-link:hover .fandom-link-inner { background: linear-gradient(135deg, #1a001a, #2a002a); border-color: var(--soft-red); box-shadow: 0 0 16px rgba(194,24,91,0.3); }
-        .fandom-icon { font-size: 1.8rem; }
-        .fandom-link-name { font-weight: bold; color: #e0e0e0; font-size: 0.95rem; margin-bottom: 3px; }
-        .fandom-link-sub { font-size: 0.78rem; color: #666; }
-        .fandom-arrow { margin-left: auto; color: var(--soft-red); font-size: 1.3rem; }
-
-        .film-btn-wrap { margin-top: 10px; padding-top: 10px; border-top: 1px solid #2a2a2a; }
-        .film-btn { width: 100%; background: linear-gradient(135deg, #1a0a00, #3a1500); border: 1px solid var(--glam-red); color: #ffcc88; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-family: 'Stalinist One', cursive; font-size: 0.8rem; text-align: left; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
-        .film-btn:hover { background: linear-gradient(135deg, #3a1500, #5a2000); border-color: var(--soft-red); }
-        .film-btn.active { border-color: #ffcc88; color: #fff; background: linear-gradient(135deg, #5a2000, #8a3000); }
-
-        @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
     </style>
 </head>
 <body>
-
-<header>
-    <div style="display:flex;align-items:center;gap:10px;">
-        <div class="logo" onclick="showHome()">JOE-STREAM</div>
-        <button class="top100-btn" onclick="openTop100()">🏆 ТОП-100</button>
+    <!-- Завантажувач -->
+    <div id="loadingOverlay">
+        <div class="loader-text">Завантаження JOE-STREAM...</div>
     </div>
-    <div class="search-wrap">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Пошук аніме..." oninput="doSearch(this.value)" />
-            <button onclick="doSearch(document.getElementById('searchInput').value)">🔍</button>
+
+    <header>
+        <div style="display:flex;align-items:center;gap:10px;">
+            <div class="logo" onclick="showHome()">JOE-STREAM</div>
+            <button class="top100-btn" onclick="openTop100()">🏆 ТОП-100</button>
         </div>
-    </div>
-</header>
-
-<div class="modal-overlay" id="top100Modal">
-    <div class="modal-box">
-        <div class="modal-header">
-            <h2>🏆 ТОП-100 — MyAnimeList</h2>
-            <button class="modal-close" onclick="closeTop100()">✕</button>
-        </div>
-        <div class="modal-body" id="top100Body">
-            <div class="top-loading">Завантаження...</div>
-        </div>
-    </div>
-</div>
-
-<div id="searchResults"></div>
-<div id="homeScreen" class="home-screen"></div>
-
-<div id="playerScreen" class="player-screen">
-    <button class="back-btn" onclick="showHome()">← На головну</button>
-    <div class="main-grid">
-        <div class="left">
-            <div class="video-container">
-                <div class="video-wrap">
-                    <iframe id="mainPlayer" src="" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
-                </div>
-            </div>
-            <h1 id="animeTitle" style="color:var(--soft-red); margin-top:16px; font-family:'Stalinist One'; font-size:1.4rem;"></h1>
-
-            <div class="info-panel">
-                <div class="mal-rating" id="malRating">
-                    <div class="mal-score" id="malScore">—</div>
-                    <div class="mal-info">
-                        <div class="mal-label">Рейтинг MAL</div>
-                        <div class="mal-members" id="malMembers"></div>
-                    </div>
-                    <div class="mal-rank-badge" id="malRankBadge"></div>
-                    <a id="malLink" class="mal-link" href="#" target="_blank">MAL →</a>
-                </div>
-
-                <div class="desc-box">
-                    <div class="desc-header">
-                        <div class="desc-title">📖 ПРО АНІМЕ</div>
-                    </div>
-                    <div class="desc-text" id="animeDesc">Завантаження...</div>
-                </div>
-
-                <div class="tracker-box">
-                    <div class="tracker-title">📌 МОЯ СЕРІЯ</div>
-                    <div class="tracker-current" id="trackerCurrent">Ще не починав(ла)</div>
-                </div>
-
-                <div class="fandom-box" id="fandomBox">
-                    <div class="fandom-title">📚 WIKI ФАНДОМ</div>
-                    <a id="fandomLink" class="fandom-link" href="#" target="_blank">
-                        <div class="fandom-link-inner">
-                            <span class="fandom-icon">🌐</span>
-                            <div>
-                                <div class="fandom-link-name" id="fandomLinkName">Відкрити вікі</div>
-                                <div class="fandom-link-sub">Fandom Wiki — персонажі, сюжет, факти</div>
-                            </div>
-                            <span class="fandom-arrow">→</span>
-                        </div>
-                    </a>
-                </div>
+        <div class="search-wrap">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Пошук аніме..." oninput="doSearch(this.value)" />
+                <button onclick="doSearch(document.getElementById('searchInput').value)">🔍</button>
             </div>
         </div>
+    </header>
 
-        <div class="right">
-            <div class="ep-list">
-                <div id="seasonTabs" class="season-selector"></div>
-                <div id="episodesGrid" class="episodes-grid"></div>
-                <div id="filmSection" class="film-btn-wrap" style="display:none;"></div>
+    <!-- Модальне вікно ТОП-100 -->
+    <div class="modal-overlay" id="top100Modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>🏆 ТОП-100 — MyAnimeList</h2>
+                <button class="modal-close" onclick="closeTop100()">✕</button>
+            </div>
+            <div class="modal-body" id="top100Body">
+                <div class="top-loading">Завантаження...</div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-let ANIME_DATA = {};
+    <!-- Результати пошуку -->
+    <div id="searchResults"></div>
 
-// Завантажити дані з JSON
-async function loadAnimeData() {
-    try {
-        const response = await fetch('data/anime.json');
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        ANIME_DATA = await response.json();
-        renderHome();
-    } catch (error) {
-        console.error('Помилка завантаження даних:', error);
-        document.getElementById('homeScreen').innerHTML = '<p style="color:#888;text-align:center;padding:40px;">Помилка завантаження даних</p>';
-    }
-}
-
-function renderHome() {
-    const homeScreen = document.getElementById('homeScreen');
-    homeScreen.innerHTML = '';
-    
-    Object.keys(ANIME_DATA).forEach(key => {
-        const anime = ANIME_DATA[key];
-        const card = document.createElement('div');
-        card.className = 'anime-card';
-        card.onclick = () => openAnime(key);
-        card.innerHTML = `
-            <img src="https://img.anilibs.com/character/${anime.mal_id}_1.jpg" alt="${anime.name}" onerror="this.src='https://via.placeholder.com/280x420?text=${anime.name}'">
+    <!-- Головна сторінка -->
+    <div id="homeScreen" class="home-screen">
+        <div class="anime-card" onclick="openAnime('APRIL_LIE')">
+            <img data-anilist="20665" src="https://via.placeholder.com/300x400?text=Loading..." alt="Your Lie in April - Постер">
             <div class="card-info">
-                <h3>${anime.name}</h3>
-                <p>${anime.description || 'Аніме'}</p>
+                <h3>ТВОЯ АПРЕЛЬСКАЯ ЛОЖЬ</h3>
+                <p>Мелодія серця (С1)</p>
             </div>
-        `;
-        homeScreen.appendChild(card);
-    });
-}
+        </div>
 
-function showHome() {
-    document.getElementById('homeScreen').style.display = 'grid';
-    document.getElementById('playerScreen').style.display = 'none';
-    document.getElementById('searchResults').style.display = 'none';
-}
+        <div class="anime-card" onclick="openAnime('KUSURIYA')">
+            <img data-anilist="161645" src="https://via.placeholder.com/300x400?text=Loading..." alt="The Apothecary Diaries - Постер">
+            <div class="card-info">
+                <h3>МОНОЛОГ ФАРМАЦЕВТА</h3>
+                <p>Таємниці палацу (С1-С2)</p>
+            </div>
+        </div>
 
-async function openAnime(key) {
-    const anime = ANIME_DATA[key];
-    if (!anime) return;
-    
-    document.getElementById('homeScreen').style.display = 'none';
-    document.getElementById('playerScreen').style.display = 'block';
-    document.getElementById('searchResults').style.display = 'none';
-    
-    document.getElementById('animeTitle').textContent = anime.name;
-    document.getElementById('animeDesc').textContent = anime.synopsis || 'Опис недоступний';
-    document.getElementById('fandomLink').href = anime.fandom_url;
-    
-    // Завантажити дані MAL
-    await fetchMALData(anime.mal_id || anime.season_mal_ids[Object.keys(anime.season_mal_ids)[0]]);
-    
-    renderSeasons(anime);
-    const firstSeason = Object.keys(anime.seasons)[0];
-    renderEpisodes(anime, firstSeason);
-    setActivePlayer(anime, firstSeason, 1);
-}
+        <div class="anime-card" onclick="openAnime('JOE')">
+            <img data-anilist="2402" src="https://via.placeholder.com/300x400?text=Loading..." alt="Ashita no Joe - Постер">
+            <div class="card-info">
+                <h3>ЗАВТРАШНИЙ ДЖО</h3>
+                <p>Класика боксу (С1-С2)</p>
+            </div>
+        </div>
 
-async function fetchMALData(malId) {
-    try {
-        const response = await fetch(`https://api.jikan.moe/v4/anime/${malId}`);
-        if (!response.ok) throw new Error('MAL API error');
-        const data = await response.json();
-        const anime = data.data;
-        
-        document.getElementById('malScore').textContent = anime.score ? anime.score.toFixed(1) : '—';
-        document.getElementById('malMembers').textContent = `${(anime.members / 1000).toFixed(0)}K членів`;
-        document.getElementById('malLink').href = anime.url;
-        
-        if (anime.rank) {
-            const rankClass = anime.rank <= 3 ? 'gold' : anime.rank <= 10 ? 'silver' : 'bronze';
-            document.getElementById('malRankBadge').innerHTML = `<span class="top-rank ${rankClass}">#${anime.rank}</span>`;
-        }
-    } catch (error) {
-        console.error('MAL помилка:', error);
-    }
-}
+        <div class="anime-card" onclick="openAnime('FRIEREN')">
+            <img data-anilist="154587" src="https://via.placeholder.com/300x400?text=Loading..." alt="Frieren - Постер">
+            <div class="card-info">
+                <h3>ФРИРЕН</h3>
+                <p>Магічна подорож (С1-С2)</p>
+            </div>
+        </div>
 
-function renderSeasons(anime) {
-    const seasonTabs = document.getElementById('seasonTabs');
-    seasonTabs.innerHTML = '';
-    
-    Object.keys(anime.seasons).forEach(season => {
-        const btn = document.createElement('button');
-        btn.className = 'szn-btn active';
-        btn.textContent = season;
-        btn.onclick = () => {
-            document.querySelectorAll('.szn-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderEpisodes(anime, season);
-            setActivePlayer(anime, season, 1);
-        };
-        seasonTabs.appendChild(btn);
-    });
-}
+        <div class="anime-card" onclick="openAnime('LAGANN')">
+            <img data-anilist="2001" src="https://via.placeholder.com/300x400?text=Loading..." alt="Gurren Lagann - Постер">
+            <div class="card-info">
+                <h3>ГУРРЕН-ЛАГАНН</h3>
+                <p>Бур, що прониже небеса (С1)</p>
+            </div>
+        </div>
 
-function renderEpisodes(anime, season) {
-    const episodesGrid = document.getElementById('episodesGrid');
-    episodesGrid.innerHTML = '';
-    
-    const episodes = anime.seasons[season];
-    Object.keys(episodes).forEach(ep => {
-        const epBtn = document.createElement('div');
-        epBtn.className = 'ep-item';
-        epBtn.textContent = ep;
-        epBtn.onclick = () => {
-            document.querySelectorAll('.ep-item').forEach(e => e.classList.remove('active'));
-            epBtn.classList.add('active');
-            setActivePlayer(anime, season, ep);
-        };
-        episodesGrid.appendChild(epBtn);
-    });
-}
+        <div class="anime-card" onclick="openAnime('EVA')">
+            <img data-anilist="30" src="https://via.placeholder.com/300x400?text=Loading..." alt="Evangelion - Постер">
+            <div class="card-info">
+                <h3>ЕВАНГЕЛИОН</h3>
+                <p>Лізь у робота, Сіндзі (С1)</p>
+            </div>
+        </div>
 
-function setActivePlayer(anime, season, episode) {
-    const url = anime.seasons[season][episode];
-    document.getElementById('mainPlayer').src = url || '';
-}
+        <div class="anime-card" onclick="openAnime('BERSERK')">
+            <img data-anilist="33" src="https://via.placeholder.com/300x400?text=Loading..." alt="Berserk - Постер">
+            <div class="card-info">
+                <h3>БЕРСЕРК</h3>
+                <p>Чорний мечник (С1)</p>
+            </div>
+        </div>
 
-function doSearch(query) {
-    if (!query.trim()) {
-        document.getElementById('searchResults').style.display = 'none';
-        return;
-    }
-    
-    const results = document.getElementById('searchResults');
-    results.innerHTML = '';
-    const q = query.toLowerCase();
-    let found = false;
-    
-    Object.keys(ANIME_DATA).forEach(key => {
-        const anime = ANIME_DATA[key];
-        if (anime.name.toLowerCase().includes(q)) {
-            found = true;
-            const card = document.createElement('div');
-            card.className = 'anime-card';
-            card.onclick = () => openAnime(key);
-            card.innerHTML = `
-                <img src="https://img.anilibs.com/character/${anime.mal_id}_1.jpg" alt="${anime.name}" onerror="this.src='https://via.placeholder.com/280x420?text=${anime.name}'">
-                <div class="card-info"><h3>${anime.name}</h3></div>
-            `;
-            results.appendChild(card);
-        }
-    });
-    
-    if (!found) {
-        results.innerHTML = '<div class="search-none">Аніме не знайдено</div>';
-    }
-    
-    document.getElementById('homeScreen').style.display = 'none';
-    document.getElementById('playerScreen').style.display = 'none';
-    results.style.display = 'grid';
-}
+        <div class="anime-card" onclick="openAnime('VINLAND')">
+            <img data-anilist="101348" src="https://via.placeholder.com/300x400?text=Loading..." alt="Vinland Saga - Постер">
+            <div class="card-info">
+                <h3>САГА О ВИНЛАНДЕ</h3>
+                <p>Шлях вікінга (С1-С2)</p>
+            </div>
+        </div>
 
-async function openTop100() {
-    const modal = document.getElementById('top100Modal');
-    modal.classList.add('open');
-    const body = document.getElementById('top100Body');
-    body.innerHTML = '<div class="top-loading">Завантаження...</div>';
-    
-    try {
-        const response = await fetch('https://api.jikan.moe/v4/top/anime?limit=100');
-        const data = await response.json();
-        body.innerHTML = '';
-        
-        data.data.forEach((anime, idx) => {
-            const rank = idx + 1;
-            let rankClass = 'gold';
-            if (rank <= 3) rankClass = 'gold';
-            else if (rank <= 10) rankClass = 'silver';
-            else if (rank <= 50) rankClass = 'bronze';
-            
-            const item = document.createElement('div');
-            item.className = 'top-item';
-            item.innerHTML = `
-                <div class="top-rank ${rankClass}">#${rank}</div>
-                <img class="top-img" src="${anime.images.jpg.small_image_url}" alt="${anime.title}">
-                <div class="top-info">
-                    <div class="top-title">${anime.title}</div>
-                    <div class="top-score">⭐ ${anime.score || '—'}</div>
+        <div class="anime-card" onclick="openAnime('JIGOKU')">
+            <img data-anilist="128893" src="https://via.placeholder.com/300x400?text=Loading..." alt="Jigokuraku - Постер">
+            <div class="card-info">
+                <h3>АДСКИЙ РАЙ</h3>
+                <p>Пекло та рай (С1-С2)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('FMA')">
+            <img data-anilist="121" src="https://via.placeholder.com/300x400?text=Loading..." alt="Fullmetal Alchemist - Постер">
+            <div class="card-info">
+                <h3>СТАЛЬНОЙ АЛХИМИК</h3>
+                <p>Брати Елрік (С1)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('FMAB')">
+            <img data-anilist="5114" src="https://via.placeholder.com/300x400?text=Loading..." alt="Fullmetal Alchemist Brotherhood - Постер">
+            <div class="card-info">
+                <h3>СТАЛЬНОЙ АЛХИМИК: БРАТСТВО</h3>
+                <p>Повна адаптація манги (С1)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('DRSTONE')">
+            <img data-anilist="105333" src="https://via.placeholder.com/300x400?text=Loading..." alt="Dr. Stone - Постер">
+            <div class="card-info">
+                <h3>ДОКТОР СТОУН</h3>
+                <p>Наука проти природи (С1-С6)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('CSM')">
+            <img data-anilist="127230" src="https://via.placeholder.com/300x400?text=Loading..." alt="Chainsaw Man - Постер">
+            <div class="card-info">
+                <h3>ЧЕЛОВЕК-БЕНЗОПИЛА</h3>
+                <p>Денджі та його бензопила (С1)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('GTO')">
+            <img data-anilist="245" src="https://via.placeholder.com/300x400?text=Loading..." alt="GTO - Постер">
+            <div class="card-info">
+                <h3>КРУТОЙ УЧИТЕЛЬ ОНИДЗУКА</h3>
+                <p>Найкращий вчитель (С1)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('DANDADAN')">
+            <img data-anilist="171018" src="https://via.placeholder.com/300x400?text=Loading..." alt="Dandadan - Постер">
+            <div class="card-info">
+                <h3>ДАНДАДАН</h3>
+                <p>Прибульці та привиди (С1-С2)</p>
+            </div>
+        </div>
+
+        <div class="anime-card" onclick="openAnime('OSHINOKO')">
+            <img data-anilist="166531" src="https://via.placeholder.com/300x400?text=Loading..." alt="Oshi no Ko - Постер">
+            <div class="card-info">
+                <h3>РЕБЁНОК ИДОЛА</h3>
+                <p>Зірки та таємниці (С1-С3)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Екран плеєра -->
+    <div id="playerScreen" class="player-screen">
+        <button class="back-btn" onclick="showHome()">← На головну</button>
+        <div class="main-grid">
+            <div class="left">
+                <div class="video-container">
+                    <div class="video-wrap">
+                        <iframe id="mainPlayer" src="" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
+                    </div>
                 </div>
-            `;
-            body.appendChild(item);
-        });
-    } catch (error) {
-        body.innerHTML = '<div class="top-loading">Помилка завантаження</div>';
-    }
-}
+                <h1 id="animeTitle"></h1>
 
-function closeTop100() {
-    document.getElementById('top100Modal').classList.remove('open');
-}
+                <div class="info-panel">
+                    <!-- Рейтинг MAL -->
+                    <div class="mal-rating" id="malRating">
+                        <div class="mal-score" id="malScore">—</div>
+                        <div class="mal-info">
+                            <div class="mal-label">Рейтинг MAL</div>
+                            <div class="mal-members" id="malMembers"></div>
+                        </div>
+                        <div class="mal-rank-badge" id="malRankBadge"></div>
+                        <a id="malLink" class="mal-link" href="#" target="_blank">MAL →</a>
+                    </div>
 
-// Завантажити дані при завантаженні сторінки
-window.onload = loadAnimeData;
-</script>
+                    <!-- Опис -->
+                    <div class="desc-box">
+                        <div class="desc-header">
+                            <div class="desc-title">📖 ПРО АНІМЕ</div>
+                        </div>
+                        <div class="desc-text" id="animeDesc">Завантаження...</div>
+                    </div>
 
+                    <!-- Трекер серій -->
+                    <div class="tracker-box">
+                        <div class="tracker-title">📌 МОЯ СЕРІЯ</div>
+                        <div class="tracker-current" id="trackerCurrent">Ще не починав(ла)</div>
+                    </div>
+
+                    <!-- Fandom Wiki -->
+                    <div class="fandom-box" id="fandomBox">
+                        <div class="fandom-title">📚 WIKI ФАНДОМ</div>
+                        <a id="fandomLink" class="fandom-link" href="#" target="_blank">
+                            <div class="fandom-link-inner">
+                                <span class="fandom-icon">🌐</span>
+                                <div>
+                                    <div class="fandom-link-name" id="fandomLinkName">Відкрити вікі</div>
+                                    <div class="fandom-link-sub">Fandom Wiki — персонажі, сюжет, факти</div>
+                                </div>
+                                <span class="fandom-arrow">→</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="ep-list">
+                    <div id="seasonTabs" class="season-selector"></div>
+                    <div id="episodesGrid" class="episodes-grid"></div>
+                    <div id="filmSection" class="film-btn-wrap" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTop">↑</button>
+
+    <!-- Підключення скриптів -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
