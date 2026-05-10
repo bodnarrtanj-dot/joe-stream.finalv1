@@ -985,6 +985,5 @@ const ANIME_DATA = {
             147: "https://kodikplayer.com/seria/283346/12a932e83f6d3f8a4ef93e6e25d4673e/720p",
             148: "https://kodikplayer.com/seria/283347/6478648206acc71c53909e54b532bb71/720p"}
            }
-        }
     }
-};  
+}
