@@ -788,7 +788,7 @@ const ANIME_DATA = {
         mal_id: 52034,
         fandom_url: "https://oshinoko.fandom.com/wiki/Oshi_no_Ko_Wiki",
         season_mal_ids: { "Сезон 1": 52034, "Сезон 2": 59108, "Сезон 3": 59109 },
-        seasons: {
+        seasons: {};
             "Сезон 1": {
                 1: "https://kodikplayer.com/seria/1135245/e025553a3b492630d3205f76b2636d12/720p",
                 2: "https://kodikplayer.com/seria/1135945/59d881f4bd6b9d0db2fd9cde5f0a146d/720p",
