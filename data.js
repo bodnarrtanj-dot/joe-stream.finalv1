@@ -987,6 +987,4 @@ const ANIME_DATA = {
             148: "https://kodikplayer.com/seria/283347/6478648206acc71c53909e54b532bb71/720p"}
         }
     }
-}
-};                
-
+};
