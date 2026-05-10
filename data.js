@@ -960,7 +960,6 @@ const ANIME_DATA = {
             122: "https://kodikplayer.com/seria/283360/eb1034a49f9b4ca031d0b44e8885f58f/720p",
             123: "https://kodikplayer.com/seria/283361/76f259d3719f4555b71eb705db354df8/720p",
             124: "https://kodikplayer.com/seria/283362/9717bb1859e37c81130fc69c9c5f8a9b/720p",
-            124: "https://kodikplayer.com/seria/283323/4eab173fff3edea5db928622d110acfb/720p",
             125: "https://kodikplayer.com/seria/283324/c00c91e9b734de3cf08b2f9d37c924af/720p",
             126: "https://kodikplayer.com/seria/283325/b385044b1ef8a8ce0f33bd9c37c603b9/720p",
             127: "https://kodikplayer.com/seria/283326/3a31a4a8fc865ba98a1afef63242f03f/720p",
