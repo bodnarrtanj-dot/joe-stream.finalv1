@@ -788,7 +788,7 @@ const ANIME_DATA = {
         mal_id: 52034,
         fandom_url: "https://oshinoko.fandom.com/wiki/Oshi_no_Ko_Wiki",
         season_mal_ids: { "Сезон 1": 52034, "Сезон 2": 59108, "Сезон 3": 59109 },
-        seasons: {};
+        seasons: {
             "Сезон 1": {
                 1: "https://kodikplayer.com/seria/1135245/e025553a3b492630d3205f76b2636d12/720p",
                 2: "https://kodikplayer.com/seria/1135945/59d881f4bd6b9d0db2fd9cde5f0a146d/720p",
@@ -985,5 +985,8 @@ const ANIME_DATA = {
             146: "https://kodikplayer.com/seria/283345/e257d9d74f0f71a4bf70eca6e62fb490/720p",
             147: "https://kodikplayer.com/seria/283346/12a932e83f6d3f8a4ef93e6e25d4673e/720p",
             148: "https://kodikplayer.com/seria/283347/6478648206acc71c53909e54b532bb71/720p"}
+        }
     }
 }
+};                
+
